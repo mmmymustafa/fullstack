@@ -1,3 +1,14 @@
+import React from 'react';
+import { Provider } from 'react-redux';
+import {
+    Route,
+    Redirect,
+    Switch,
+    Link,
+    withRouter,
+    HashRouter
+} from 'react-router-dom'
+import { connect } from 'react-redux';
 // renders component if logged out, otherwise redirects to the root url
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
     <Route path={path} exact={exact} render={(props) => (
