@@ -5,7 +5,7 @@ class SubHeader extends React.Component {
     render() {
         return (
             <div className="sub-header">
-                <Link to="/" className="sub-path" id="no-border-sub">FEATURED</Link>
+                <Link to="/featured" className="sub-path" id="no-border-sub">FEATURED</Link>
                 <br/>
                 <Link to="/" className="sub-path">CHARTS</Link>
                 <br/>

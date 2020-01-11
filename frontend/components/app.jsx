@@ -13,6 +13,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UserContainer from './user/user_container';
 import Search from './search/search';
 import SubHeader from './sub_header/sub_header';
+import IndexPage from './index_page/index_page';
+import News from './index_page/news';
 
 
 const App = () => (
@@ -30,7 +32,8 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <Route exact path="/" />
+            <Route exact path="/" component={IndexPage}/>
+            <Route exact path="/featured"  component={News}/>
         </Switch>
     </div>
 );
