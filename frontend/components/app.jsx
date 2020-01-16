@@ -15,7 +15,11 @@ import Search from './search/search';
 import SubHeader from './sub_header/sub_header';
 import IndexPage from './index_page/index_page';
 import News from './index_page/news';
-
+import TrackShowContainer from './track/track_show_container';
+import ArtistShowContainer from './artist/artist_show_container';
+import CreateAnnotationFormContainer from './annotation/create_annotation_form_container';
+import EditAnnotationFormContainer from './annotation/edit_annotation_form_container';
+import AnnotationShowContainer from './annotation/annotation_show_container';
 
 const App = () => (
     <div>
@@ -30,10 +34,15 @@ const App = () => (
             <SubHeader />
         </subheader>
         <Switch>
+            <ProtectedRoute exact path="/annotations/:annotationId/edit" component={EditAnnotationFormContainer}/>
+            <Route exact path="/tracks/:trackId" component={TrackShowContainer} />
+            <Route exact path="/artists/:artistId" component={ArtistShowContainer}/>
+            <Route exact path="/annotations/:annotationId" component={AnnotationShowContainer}/>
+            <ProtectedRoute exact path="/annotations" component={CreateAnnotationFormContainer}/>
+            <Route exact path="/featured"  component={News}/>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <Route exact path="/" component={IndexPage}/>
-            <Route exact path="/featured"  component={News}/>
         </Switch>
     </div>
 );

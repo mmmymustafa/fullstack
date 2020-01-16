@@ -292,17 +292,17 @@ button{
 
 #activity-button:hover {
     color: #000;
-    border-bottom: .35rem solid #ff1464;
+    border-bottom: .1rem solid #ff1464;
 }
 
 #notification-button:hover{
     color: #000;
-    border-bottom: .35rem solid #ff1464;
+    border-bottom: .1rem solid #ff1464;
 }
 
 .profile-img:hover{
     color: #000;
-    border-bottom: .6rem solid #ff1464;
+    border-bottom: .2rem solid #ff1464;
 }
 
 .profile-dropdown{
@@ -482,4 +482,382 @@ h1 {
     font-size: 0.75rem;
     letter-spacing: 0.3px;
     margin-top: 8rem;
+}
+
+.track-album-cover{
+    width: 250px;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    margin-left: 5rem;
+    border: solid rgb(177, 177, 177);
+}
+
+.track-header{
+    background-color: rgb(34, 34, 34);
+    background-blend-mode: overlay;
+    background-size: cover;
+    display: flex;
+    background-image: url("https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs");
+    /* Using Frozen cover for test purposes only */
+}
+
+.track-header-titles{
+    color: white;
+    margin-left: 1rem;
+    margin-top: 4rem;
+}
+
+.track-title{
+    color: rgb(255, 255, 100);
+    font-size: 2.25em;
+}
+
+.track-artist-name{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 0.4rem;
+    color: white;
+}
+
+#track-album-title{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.track-album-title{
+    margin-left: 0.2rem;
+    color: #7d8fe8;
+}
+
+.track-lyrics{
+    background-color: white;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    font-size: 1.125em;
+}
+
+.track-lyrics-body{
+    margin-left: 1rem;
+    margin-right: 27rem;
+    margin-top: 2rem;
+    line-height: 2rem;
+}
+
+.track-lyrics-title{
+    color:  rgb(177, 177, 177);
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+
+.track-page{
+    background-color: white;
+}
+
+.artist-img{
+    position: absolute;
+    margin-top: 2rem;
+    margin-left: 10rem;
+    border: solid white;
+    border-radius: 100%
+}
+
+.artist-featured-title{
+    color: white;
+    margin-left: 35rem;
+    padding-top: 16rem;
+    padding-bottom: 1rem;
+}
+
+.artist-header{
+    background-image: url(https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600);
+    background-color: rgb(34, 34, 34);
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+.artist-page{
+    background: #f7f7f7;
+}
+
+.artist-body{
+    margin-top: 5rem;
+    font-size: 17px;
+    letter-spacing: 0;
+}
+
+.artist-name{
+    margin-left: 17.5rem;
+}
+
+.artist-about{
+    background: white;
+    margin-left: 7rem;
+    padding: 1rem;
+    width: 23rem;
+    margin-top: 2rem;
+
+}
+
+.artist-body-contents{
+    display: flex;
+}
+
+.artist-about-body{
+    margin-top: 2rem;
+}
+
+.artist-about-title{
+    font-weight: bolder
+}
+
+.artist-featured{
+        margin-left: 3rem;
+}
+
+.artist-songs{
+    background: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.artist-albums{
+    background: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.artist-album-list{
+    margin-top: 1rem;
+}
+
+.artist-track-list{
+    margin-top: 1rem;
+}
+
+.charts-item{
+    display: flex;
+    flex-direction: row;
+}
+
+.charts-headers{
+    margin-top: 5rem;
+}
+
+.charts-header-title{
+    margin-left: 30rem;
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'WaltographRegular';
+}
+
+.charts-header-sub{
+    margin-left: 33.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 900;
+    color: rgb(255, 20, 100);
+}
+
+.charts-album-cover{
+    width: 60px;
+    margin-left: 5rem;
+}
+
+
+.charts-artist-name{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 10rem;
+    font-size: 26px;
+}
+
+.charts-track-title{
+    margin-top: 1rem;
+    letter-spacing: 0;
+    font-size: 26px;
+    font-weight: 900;
+    width: 35%;
+    display: flex;
+}
+
+.charts-item {
+    display: flex;
+    border-bottom: 0.2rem solid rgb(233, 233, 233);
+    padding-top: 0.5rem;
+    padding-bottom: 0.2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    transition: background-color 0.1s ease 0s;
+}
+
+.charts-item:hover {
+   background: rgb(233, 233, 233);;
+}
+
+
+.charts-album-artwork {
+    width: 25%;
+}
+
+.charts-list{
+    margin-top: 5rem;
+}
+
+.charts-track-des{
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(154, 154, 154);
+    margin-top: 0.7rem;
+}
+
+.charts-bullets{
+    font-size: 26px;
+    margin-top: 1rem
+}
+
+.annotation{
+    float: right;
+    margin-right: 7rem;
+    margin-top: 5rem;
+    padding-left: 2rem;
+    border-left: solid;
+    padding-bottom: 1rem;
+    border-width: thick;
+    border-left-color: #99a7ee;
+}
+
+.annotation-contributor{
+    font-size: .875em;
+}
+
+.annotation-body{
+    margin: 1rem 0;
+    width: 25rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding-bottom: 1rem;
+}
+
+.annotation-edit-button{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.aeb{
+    border: black;
+    border-style: solid;
+    padding: 0.2rem 0.5rem;
+}
+
+.aeb:hover{
+    background:  rgb(233, 233, 233);
+}
+
+.annotation-form{
+    float: right;
+    margin-right: 7rem;
+    margin-top: 5rem;
+    padding-left: 2rem;
+    border-left: solid;
+    padding-bottom: 1rem;
+    border-width: thick;
+    border-left-color: #99a7ee;
+}
+
+.annotation-form-body{
+    margin: 1rem 0;
+}
+
+.annotation-form-save-button{
+    font-size: 1rem;
+    font-weight: 500;
+    /* border: #0ecb27;
+    border-style: solid;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem; */
+    transition: background-color .3s,border-color .3s;
+}
+
+.annotation-form-save-button:hover{
+    transition: none;
+    background-color: rgba(14,203,39,.2);
+}
+
+.annotation-cancel-action-button{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #9a9a9a;
+    border-style: solid;
+    padding: 0.2rem 0.5rem;
+}
+
+.afb{
+    margin: 0px;
+    width: 380px;
+    overflow: hidden visible;
+    overflow-wrap: break-word;
+    height: 200px;
+    background-color: rgba(204,204,204,.2);
+    border: none;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+    padding: .5rem;
+    font-size: 16px;
+    line-height: 1.5rem;
+    resize: none;
+}
+
+.afb:active{
+    box-shadow: #99a7ee 0 0 0.3em inset;
+    outline: 0;
+}
+
+.afb:focus{
+    box-shadow: #99a7ee 0 0 0.3em inset;
+    outline: 0;
+}
+
+.annotation-form-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.afsb{
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border: #0ecb27;
+    border-style: solid;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    color: #0ecb27;
+    transition: background-color .3s,border-color .3s;
+}
+
+.afsb:hover{
+    transition: none;
+    background-color: rgba(14,203,39,.2);}
+
+.acab{
+    padding: 0.4rem;
+    margin-left: 0.2rem;
+    transition: background-color .3s,border-color .3s;
+}
+
+.acab:hover{
+    transition: none;
+    background-color: rgba(154,154,154,.2);
+}
+
+.wtf{
+    transition: background-color .3s,border-color .3s;
+}
+
+.wtf:hover{
+    transition: none;
+    background-color: rgba(14,203,39,.2);
 }
