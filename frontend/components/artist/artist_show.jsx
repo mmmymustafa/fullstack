@@ -30,7 +30,7 @@ class ArtistShow extends React.Component {
         return (
             <div className="artist-page">
                 <div className="artist-header">
-                    <img className="artist-img" src="http://babychattel.com/wp-content/uploads/2013/12/princess-elsa-frozen-disney-movie-idina-menzel-300x300.jpg"/>
+                    <img className="artist-img" src={this.props.artist.picture_url}/>
                     <h3 className="artist-featured-title">Featured</h3>
                 </div>
                 <div className="artist-body">

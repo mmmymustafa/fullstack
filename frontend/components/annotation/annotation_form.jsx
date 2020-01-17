@@ -5,6 +5,8 @@ class AnnotationForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.annotation;
+        this.state.trackId = this.props.trackId;
+        this.state.selectedLyrics = this.props.selectedLyrics;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -21,9 +23,12 @@ class AnnotationForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let trackId;
+        let selectedLyrics;
         this.props.formType === "Create Annotation" ? trackId = parseInt(this.state.trackId) : trackId = parseInt(this.state.track_id)
+        this.props.formType === "Create Annotation" ? selectedLyrics = this.state.selectedLyrics : selectedLyrics = this.state.selected_lyrics
         const annotation = Object.assign({}, this.state, {
-            track_id: trackId
+            track_id: trackId,
+            selected_lyrics: selectedLyrics
         });
         this.props.action(annotation);
     }
@@ -42,7 +47,7 @@ class AnnotationForm extends React.Component {
                     </div>
                     <div className="annotation-form-buttons">
                     <div className="wtf"><div className="annotation-form-save-button"><input className="afsb" type="submit" value="Save" /></div></div>
-                        <div className="acab"><Link to={`/tracks/${this.state.trackId}`}><button className="annotation-cancel-action-button">Cancel</button></Link></div>
+                        <div className="acab"><button onClick={this.props.toggleAnnotationForm} className="annotation-cancel-action-button">Cancel</button></div>
                     </div>
                 </form>
             </div>

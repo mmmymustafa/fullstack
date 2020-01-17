@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LyricsContainer from './lyrics_container';
 
 class TrackShow extends React.Component{
     componentDidMount() {
@@ -11,10 +12,6 @@ class TrackShow extends React.Component{
 
 
     render() {
-        if(this.props.track.lyrics === undefined) return null;
-        const renderLyrics = () => (
-            this.props.track.lyrics.split("\n").map((line) => <div className="lyrics-line">{line}</div>)
-        )
         return (
           <div className="track-page">
             <div className="track-header">
@@ -27,10 +24,8 @@ class TrackShow extends React.Component{
                 </div>
             </div>
             <div className="track-body">
-                <div className="track-lyrics">
-                        <p className="track-lyrics-title">{this.props.track.title} lyrics</p>
-                        <span><p className="track-lyrics-body">{renderLyrics()}</p></span>
-                </div>
+                <p className="track-lyrics-title">{this.props.track.title} lyrics</p>
+                <LyricsContainer />
             </div >
           </div>
         )
