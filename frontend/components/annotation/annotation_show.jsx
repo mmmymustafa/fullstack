@@ -13,7 +13,7 @@ class AnnotationShow extends React.Component {
             <div className="annotation">
             <h3 className="annotation-contributer">Contributor: {this.props.annotation.author}</h3>
             <p className="annotation-body">{this.props.annotation.body}</p>
-            <Link to={`/annotation/${this.props.annotation.id}/edit`}><span className="aeb"><button className="annotation-edit-button">Edit</button></span></Link>
+            <Link to={`/annotations/${this.props.annotation.id}/edit`}><span className="aeb"><button className="annotation-edit-button">Edit</button></span></Link>
             </div>
         )
     }

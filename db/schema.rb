@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_003207) do
+ActiveRecord::Schema.define(version: 2020_01_17_192018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_01_15_003207) do
     t.string "about", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "album_cover_url"
+    t.string "track_banner"
     t.index ["artist_id"], name: "index_albums_on_artist_id"
     t.index ["title"], name: "index_albums_on_title"
   end
@@ -53,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_003207) do
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "selected_lyrics", null: false
     t.index ["track_id"], name: "index_annotations_on_track_id"
     t.index ["user_id"], name: "index_annotations_on_user_id"
   end
@@ -62,6 +65,8 @@ ActiveRecord::Schema.define(version: 2020_01_15_003207) do
     t.string "about", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture_url"
+    t.string "header_pic_url"
     t.index ["name"], name: "index_artists_on_name"
   end
 

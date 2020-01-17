@@ -3,9 +3,11 @@ import { withRouter } from 'react-router-dom';
 import AnnotationForm from './annotation_form';
 import { createAnnotation } from '../../actions/annotation_actions';
 import { fetchUser } from '../../actions/user_actions';
-import { selectUser } from '../../reducers/selectors';
+import { fetchTrack } from '../../actions/track_actions';
+import { selectUser, selectTrack } from '../../reducers/selectors';
+import { fetchTracks } from '../../util/track_api_util';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     const _currentUserId = state.session.id;
     const currentUser = selectUser(state.entities, _currentUserId);
     return {
@@ -14,7 +16,8 @@ const mSTP = (state) => {
         annotation: {
             userId: _currentUserId, //for testing purposes
             trackId: 9, //for testing purposes
-            body: ''
+            body: '',
+            selectedLyrics: ''
         },
         formType: 'Create Annotation'
     }
@@ -22,7 +25,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => ({
     action: annotation => dispatch(createAnnotation(annotation)),
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
 })
 
 export default connect(mSTP, mDTP)(AnnotationForm)

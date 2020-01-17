@@ -531,15 +531,15 @@ h1 {
 }
 
 .track-lyrics{
+    display: flex;
     background-color: white;
     margin-left: 6rem;
-    margin-right: 6rem;
     font-size: 1.125em;
 }
 
 .track-lyrics-body{
     margin-left: 1rem;
-    margin-right: 27rem;
+    margin-right: 10rem;
     margin-top: 2rem;
     line-height: 2rem;
 }
@@ -547,7 +547,7 @@ h1 {
 .track-lyrics-title{
     color:  rgb(177, 177, 177);
     margin-top: 1.5rem;
-    margin-left: 1rem;
+    margin-left: 7rem;
 }
 
 .track-page{
@@ -860,4 +860,12 @@ h1 {
 .wtf:hover{
     transition: none;
     background-color: rgba(14,203,39,.2);
+}
+
+#yinw{
+    background: blue;
+}
+
+.lyrics-line{
+    display: flex;
 }
