@@ -15,7 +15,7 @@ class TrackShow extends React.Component{
         return (
           <div className="track-page">
             <div className="track-header">
-                <img className="track-album-cover" src="https://upload.wikimedia.org/wikipedia/en/8/89/Frozen_2013_soundtrack.png"/>
+                <img className="track-album-cover" src={this.props.album.album_cover_url}/>
                 {/* Using Frozen Soundtrack picture only for testing purposes */}
                 <div className="track-header-titles">
                 <span className="track-title"><h2>{this.props.track.title}</h2></span>
