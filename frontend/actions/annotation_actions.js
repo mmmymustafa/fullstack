@@ -7,7 +7,7 @@ const receiveAnnotation = annotation => ({
     annotation
 })
 
-export const fetchAnnotation= annotationId => dispatch => {
+export const fetchAnnotation = annotationId => dispatch => {
     return AnnotationApiUtil.fetchAnnotation(annotationId)
         .then(annotation => dispatch(receiveAnnotation(annotation)))
 }

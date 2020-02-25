@@ -46,29 +46,35 @@ class Lyrics extends React.Component{
             _selected == new RegExp(`/${selected}/gi`)
         }
         if (this.props.track.lyrics === undefined) return null;
-        const renderLyrics = () => (
-        this.props.track.lyrics.split("\n").map((line) => <div className="lyrics-line">{line}</div>)
-        )
+        const renderLyrics = () => {
+            return this.props.track.lyrics.split("\n").map((line, idx) => <div className="lyrics-line">{line}</div>)
+        }
         return(
             <div className="track-lyrics">
-                <span><p hidden onMouseUp={this.onHighlight} className="track-lyrics-body">{renderLyrics()}</p></span>
+                <div hidden onMouseUp={this.onHighlight} className="track-lyrics-body">{renderLyrics()}</div>
                 {/* <textarea onSelect="Ur highlighting mayne" className="tlb" value={document.getElementsByClassName("track-lyrics-body")[0].innerText}></textarea> */}
                 <div onMouseUp={this.onHighlight} className="track-lyrics-body" >{lyr && lyr.replace(/([A-Z])/g, ' \n$1').split("\n").map((line) => {
                     let foundAnnotation = line;
                     for (let i = 0; i < this.props.track.annotated_lyrics.length; i++){
                         let lyrAnn = this.props.track.annotated_lyrics[i]
-                        let currentAnnotation = line.replace(lyrAnn, `<p id="yinw" className="yinw">${lyrAnn}</p>`)
-                        if(currentAnnotation !== lyrAnn ){ foundAnnotation = currentAnnotation;
+                        let currentAnnotation = foundAnnotation.replace(lyrAnn, `<div id="yinw" className="yinw">${lyrAnn}</div>`)
+                        if(currentAnnotation !== lyrAnn ){ 
+                            foundAnnotation = currentAnnotation;
                         } 
                     }
-                    console.log(foundAnnotation)
+                    // console.log(foundAnnotation)
                     return(
-                    <div dangerouslySetInnerHTML={{ __html: foundAnnotation}} className="lyrics-line">
-                </div>)})}</div>
+                    <div dangerouslySetInnerHTML={{ __html: foundAnnotation}} className="lyrics-line"></div>
+                    )})}
+                    </div>
                 {this.state.showComponent ?
                     <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> :
                     null
-                }
+                } 
+                {/* {this.state.showComponent ?
+                    <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> :
+                    null
+                } */}
             </div>
             
         )

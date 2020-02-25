@@ -7,6 +7,7 @@ class TrackShow extends React.Component{
        this.props.fetchTrack(this.props.trackId)
            .then(() => this.props.fetchArtist(this.props.track.artist_id))
            .then(() => this.props.fetchAlbum(this.props.track.album_id))
+           .then(() => this.props.track.annotationIds.map((annId) => this.props.fetchAnnotation(annId)))
     }
     
 
@@ -15,7 +16,7 @@ class TrackShow extends React.Component{
         return (
           <div className="track-page">
             <div className="track-header">
-                <img className="track-album-cover" src={this.props.album.album_cover_url}/>
+                    <img className={`track-album-cover ${this.props.track.id}`} src={this.props.album.album_cover_url}/>
                 {/* Using Frozen Soundtrack picture only for testing purposes */}
                 <div className="track-header-titles">
                 <span className="track-title"><h2>{this.props.track.title}</h2></span>

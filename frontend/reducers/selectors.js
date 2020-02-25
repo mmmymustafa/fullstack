@@ -14,6 +14,10 @@ export const selectTracksArtist = ({ artists }, track) => {
     return artists[track.artist_id] || {};
 };
 
+export const selectTracksAnnotations = ({ annotations }, track) => {
+    return track.annotationIds.map(id => annotations[id])
+};
+
 export const selectArtist = ({ artists }, artistId) => {
     return artists[artistId] || {};
 }

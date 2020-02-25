@@ -8,6 +8,10 @@ class Charts extends React.Component{
         this.props.fetchArtists()
     }
 
+    componentWillUnmount(){
+        
+    }
+
     render(){
         return(
             <div className="charts">
@@ -16,16 +20,17 @@ class Charts extends React.Component{
                     <h3 className="charts-header-sub">TRENDING ON DISNEYUS</h3>
                 </div>
                 <ol className="charts-list" type="1">
-                    {this.props.tracks.map((track, idx) => <div>
+                    {this.props.tracks.map((track, idx) => {
+                    return <div>
                     <Link to={`/tracks/${track.id}`}>
                         <li className="charts-item">
                         <p className="charts-bullets">{idx + 1}</p>
-                        <div className='charts-album-artwork'><img className="charts-album-cover" src="https://upload.wikimedia.org/wikipedia/en/8/89/Frozen_2013_soundtrack.png" /></div>
+                                <div className='charts-album-artwork'><img className="charts-album-cover" src={track.album_cover} /></div>
                         <div className="charts-track-title">{track.title}<p className="charts-track-des">LYRICS</p></div>
                         <div className="charts-artist-name">{this.props.artists.map(artist => artist.id === track.artist_id ? artist.name : null)}</div>
                         </li>
                         </Link>
-                    </div>)}
+                    </div>})}
                 </ol>
             </div>
         )
