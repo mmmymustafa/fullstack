@@ -1,5 +1,7 @@
 import React from 'react';
 import CreateAnnotationFormContainer from '../annotation/create_annotation_form_container';
+import { Link } from 'react-router-dom';
+
 
 class Lyrics extends React.Component{
     constructor(props) {
@@ -67,14 +69,21 @@ class Lyrics extends React.Component{
                     <div dangerouslySetInnerHTML={{ __html: foundAnnotation}} className="lyrics-line"></div>
                     )})}
                     </div>
-                {this.state.showComponent ?
+                {this.state.showComponent && this.props.curUserId ?
                     <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> :
                     null
                 } 
-                {/* {this.state.showComponent ?
-                    <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> :
-                    null
-                } */}
+                {this.state.showComponent && !this.props.curUserId?
+                    <div className="outer-not-signed-creating-anno">
+                        <div className="not-signed-creating-anno">
+                            <Link className="anno-link" to="/signup">Sign up </Link>
+                             or  
+                            <Link className="anno-link" to="/login"> login </Link>
+                             to start annotating
+                        </div> 
+                    </div>
+                        :null
+                } 
             </div>
             
         )

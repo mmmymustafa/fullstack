@@ -766,6 +766,7 @@ h1 {
     padding-bottom: 1rem;
     border-width: thick;
     border-left-color: #99a7ee;
+    height: fit-content;
 }
 
 .annotation-form-body{
@@ -868,4 +869,22 @@ h1 {
 
 .lyrics-line{
     display: flex;
+}
+
+.not-signed-creating-anno{
+    border: solid;
+    padding: 0.5rem;
+    height: fit-content;
+    margin-right: 2rem;
+}
+
+.outer-not-signed-creating-anno{
+    border-left: solid 0.25rem;
+    height: fit-content;
+    padding-left: 1rem;
+    border-color: #99a7ee;
+}
+
+.anno-link:hover{
+    color: #99a7ee;
 }

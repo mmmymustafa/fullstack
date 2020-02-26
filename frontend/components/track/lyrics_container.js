@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => {
     const artist = selectTracksArtist(state.entities, track)
     const album = selectTracksAlbum(state.entities, track)
     return {
+        curUserId: state.session.id,
         trackId,
         track,
         artist,

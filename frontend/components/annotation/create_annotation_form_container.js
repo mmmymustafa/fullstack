@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
         currentUser,
         annotation: {
             userId: _currentUserId, //for testing purposes
-            trackId: 9, //for testing purposes
+            trackId: 0, //for testing purposes
             body: '',
             selectedLyrics: ''
         },

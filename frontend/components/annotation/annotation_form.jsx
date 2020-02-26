@@ -24,9 +24,12 @@ class AnnotationForm extends React.Component {
         e.preventDefault();
         let trackId;
         let selectedLyrics;
+        // let userId;
         this.props.formType === "Create Annotation" ? trackId = parseInt(this.state.trackId) : trackId = parseInt(this.state.track_id)
         this.props.formType === "Create Annotation" ? selectedLyrics = this.state.selectedLyrics : selectedLyrics = this.state.selected_lyrics
+        // this.props.formType === "Create Annotation" ? userId = this.state.selectedLyrics : userId = this.state.selected_lyrics
         const annotation = Object.assign({}, this.state, {
+            // user_id: this.props.currentUserId,
             track_id: trackId,
             selected_lyrics: selectedLyrics
         });
