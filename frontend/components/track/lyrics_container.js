@@ -8,6 +8,7 @@ import { selectTrack, selectTracksAlbum, selectTracksArtist } from '../../reduce
 
 const mSTP = (state, ownProps) => {
     const trackId = ownProps.match.params.trackId;
+    const annotationId = ownProps.match.params.annotationId
     const track = selectTrack(state.entities, trackId);
     const artist = selectTracksArtist(state.entities, track)
     const album = selectTracksAlbum(state.entities, track)
@@ -17,6 +18,8 @@ const mSTP = (state, ownProps) => {
         track,
         artist,
         album,
+        annotations: state.entities.annotations,
+        curAnnotation: annotationId
     }
 }
 

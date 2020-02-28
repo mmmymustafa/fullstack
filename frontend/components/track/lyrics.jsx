@@ -1,5 +1,6 @@
 import React from 'react';
 import CreateAnnotationFormContainer from '../annotation/create_annotation_form_container';
+import AnnotationShow from '../annotation/annotation_show'
 import { Link } from 'react-router-dom';
 
 
@@ -8,9 +9,13 @@ class Lyrics extends React.Component{
         super(props);
         this.state = {
             showComponent: false,
+            showAnnotation: false,
+            curAnnotation: 29
         };
         this.onHighlight = this.onHighlight.bind(this);
+        this.onAnnotatedClick = this.onAnnotatedClick.bind(this);
         this.toggleAnnotationForm = this.toggleAnnotationForm.bind(this)
+        this.toggleShowAnnotation = this.toggleShowAnnotation.bind(this)
     }
 
     toggleAnnotationForm(){
@@ -19,73 +24,94 @@ class Lyrics extends React.Component{
         })
     }
 
-    onHighlight() {
-        console.log(document.getSelection().toString())
-        if (document.getSelection().toString() !== "")
+    toggleShowAnnotation(){
         this.setState({
-            showComponent: true,
-        });
+            showAnnotation: !this.state.showAnnotation
+        })
+    }
+
+    onHighlight() {
+        for (let i = 0; i < document.getElementsByClassName("yinw").length; i++){
+            if (document.getSelection().toString() !== "" && !document.getSelection().containsNode(document.getElementsByClassName("yinw")[i], true)){
+            this.setState({
+                showComponent: true,
+                showAnnotation: false
+            });} else {
+                this.setState({
+                showComponent: false,
+                }) 
+                break
+            }
+        }
+    }
+
+    onAnnotatedClick(){
+        let annotated = document.getElementsByClassName("yinw")
+        for (let i = 0; i < annotated.length; i++) {
+            if (annotated[i]) {
+                annotated[i].onclick = () => {
+                    this.setState({ curAnnotation: this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id, showAnnotation: true})
+                    console.log(this.state.curAnnotation)
+                    for (let i = 0; i < annotated.length; i++) {
+                        if (this.state.curAnnotation === this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id){
+                            annotated[i].setAttribute("style", "background-color: #ffff64;")} else{ annotated[i].setAttribute("style", "background-color: #e9e9e9;;")}
+                    }
+                }
+            }
+        }
     }
        
     gText(){
     let t = '';
-    // t = (document.all) ? console.log(document.selection.createRange().text) : console.log(document.getSelection());
     t = console.log(document.getSelection().toString());
     document.getElementsByClassName('track-lyrics-body').value = t;
-    // return <CreateAnnotationFormContainer/>
     }
 
     render(){
-        // if (document.getElementsByClassName("track-lyrics-body")[0] === undefined) return null
-        let lyr;
-        if (document.getElementsByClassName("track-lyrics-body")[0]){
-            lyr = document.getElementsByClassName("track-lyrics-body")[0].innerText;
-        }
+        this.onAnnotatedClick()
         let selected;
         let _selected;
         if (document.getSelection()){
             selected = document.getSelection().toString()
             _selected == new RegExp(`/${selected}/gi`)
-        }
+        } 
+        console.log(selected)
         if (this.props.track.lyrics === undefined) return null;
         const renderLyrics = () => {
-            return this.props.track.lyrics.split("\n").map((line, idx) => <div className="lyrics-line">{line}</div>)
+            let foundAnnotation = this.props.track.lyrics;
+            for (let i = 0; i < this.props.track.annotated_lyrics.length; i++) {
+                let lyrAnn = this.props.track.annotated_lyrics[i]
+                let replaceable = new RegExp(lyrAnn, "gi")
+                let currentAnnotation = foundAnnotation.replace(replaceable, `<span id="yinw" class="yinw" >${lyrAnn}</span>`)
+                if (currentAnnotation !== lyrAnn) {
+                    foundAnnotation = currentAnnotation;
+                }
+            }
+            return { __html: foundAnnotation }
         }
         return(
             <div className="track-lyrics">
-                <div hidden onMouseUp={this.onHighlight} className="track-lyrics-body">{renderLyrics()}</div>
-                {/* <textarea onSelect="Ur highlighting mayne" className="tlb" value={document.getElementsByClassName("track-lyrics-body")[0].innerText}></textarea> */}
-                <div onMouseUp={this.onHighlight} className="track-lyrics-body" >{lyr && lyr.replace(/([A-Z])/g, ' \n$1').split("\n").map((line) => {
-                    let foundAnnotation = line;
-                    for (let i = 0; i < this.props.track.annotated_lyrics.length; i++){
-                        let lyrAnn = this.props.track.annotated_lyrics[i]
-                        let currentAnnotation = foundAnnotation.replace(lyrAnn, `<div id="yinw" className="yinw">${lyrAnn}</div>`)
-                        if(currentAnnotation !== lyrAnn ){ 
-                            foundAnnotation = currentAnnotation;
-                        } 
-                    }
-                    // console.log(foundAnnotation)
-                    return(
-                    <div dangerouslySetInnerHTML={{ __html: foundAnnotation}} className="lyrics-line"></div>
-                    )})}
-                    </div>
+                <div hidden className="track-lyrics-body"><pre>{this.props.track.lyrics}</pre></div>
+                <pre><div onMouseUp={this.onHighlight} dangerouslySetInnerHTML={renderLyrics()} className="track-lyrics-body"></div></pre>
                 {this.state.showComponent && this.props.curUserId ?
                     <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> :
                     null
                 } 
-                {this.state.showComponent && !this.props.curUserId?
+                {this.state.showComponent && !this.props.curUserId ?
                     <div className="outer-not-signed-creating-anno">
                         <div className="not-signed-creating-anno">
                             <Link className="anno-link" to="/signup">Sign up </Link>
-                             or  
+                            or  
                             <Link className="anno-link" to="/login"> login </Link>
-                             to start annotating
+                            to start annotating
                         </div> 
                     </div>
                         :null
-                } 
+                }
+                {this.state.showAnnotation ?
+                    <AnnotationShow annotationId={this.state.curAnnotation} annotation={this.props.annotations[this.state.curAnnotation]} toggleShowAnnotation={this.toggleShowAnnotation} /> : null
+                }
             </div>
-            
         )
     }
 }

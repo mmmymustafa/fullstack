@@ -9,8 +9,6 @@ class TrackShow extends React.Component{
            .then(() => this.props.fetchAlbum(this.props.track.album_id))
            .then(() => this.props.track.annotationIds.map((annId) => this.props.fetchAnnotation(annId)))
     }
-    
-
 
     render() {
         return (

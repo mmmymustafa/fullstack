@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 class AnnotationShow extends React.Component {
     
-    componentDidMount() {
-        this.props.fetchAnnotation(this.props.match.params.annotationId)
-    }
+    // componentDidMount() {
+    //     this.props.fetchAnnotation(this.props.annotationId)
+    // }
 
     render() {
         if (this.props.annotation === undefined) return null

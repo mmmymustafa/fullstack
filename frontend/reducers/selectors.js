@@ -2,6 +2,10 @@ export const selectTrack = ({ tracks }, trackId) => {
     return tracks[trackId] || {};
 };
 
+export const selectAnnotation = ({ annotations }, annotationId) => {
+    return annotations[annotationId] || {};
+};
+
 export const selectUser = ({ users }, userId) => {
     return users[userId] || {};
 };

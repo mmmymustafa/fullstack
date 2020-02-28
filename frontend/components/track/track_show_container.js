@@ -20,6 +20,7 @@ const mSTP = (state, ownProps) => {
         track,
         artist,
         album,
+        annotations: state.entities.annotations
     }
 }
 
