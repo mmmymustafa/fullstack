@@ -1,6 +1,6 @@
 import React from 'react';
 import CreateAnnotationFormContainer from '../annotation/create_annotation_form_container';
-import AnnotationShow from '../annotation/annotation_show'
+import AnnotationShowContainer from '../annotation/annotation_show_container'
 import { Link } from 'react-router-dom';
 
 
@@ -10,13 +10,20 @@ class Lyrics extends React.Component{
         this.state = {
             showComponent: false,
             showAnnotation: false,
-            curAnnotation: 29
+            curAnnotation: 29,
+            selectedAnnotation: false
         };
         this.onHighlight = this.onHighlight.bind(this);
         this.onAnnotatedClick = this.onAnnotatedClick.bind(this);
         this.toggleAnnotationForm = this.toggleAnnotationForm.bind(this)
         this.toggleShowAnnotation = this.toggleShowAnnotation.bind(this)
     }
+
+    // componentDidUpdate(prevProps){
+    //     if(prevProps.annotations !== this.props.annotations){
+    //         console.log("they ain\'t the same breh")
+    //     }
+    // }
 
     toggleAnnotationForm(){
         this.setState({
@@ -35,8 +42,13 @@ class Lyrics extends React.Component{
             if (document.getSelection().toString() !== "" && !document.getSelection().containsNode(document.getElementsByClassName("yinw")[i], true)){
             this.setState({
                 showComponent: true,
-                showAnnotation: false
-            });} else {
+                showAnnotation: false,
+            });
+            let annotated = document.getElementsByClassName("yinw")
+                for (let i = 0; i < annotated.length; i++) {
+                    annotated[i].setAttribute("style", "background-color: #e9e9e9;")
+                }
+            } else {
                 this.setState({
                 showComponent: false,
                 }) 
@@ -50,11 +62,14 @@ class Lyrics extends React.Component{
         for (let i = 0; i < annotated.length; i++) {
             if (annotated[i]) {
                 annotated[i].onclick = () => {
-                    this.setState({ curAnnotation: this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id, showAnnotation: true})
+                    this.setState({ curAnnotation: this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id, showAnnotation: !this.state.showAnnotation})
                     console.log(this.state.curAnnotation)
                     for (let i = 0; i < annotated.length; i++) {
-                        if (this.state.curAnnotation === this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id){
-                            annotated[i].setAttribute("style", "background-color: #ffff64;")} else{ annotated[i].setAttribute("style", "background-color: #e9e9e9;;")}
+                        if (this.state.curAnnotation === this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id && this.state.showAnnotation === true){
+                            annotated[i].setAttribute("style", "background-color: #ffff64;")
+                        } else {
+                            annotated[i].setAttribute("style", "background-color: #e9e9e9;")
+                        }
                     }
                 }
             }
@@ -109,7 +124,10 @@ class Lyrics extends React.Component{
                         :null
                 }
                 {this.state.showAnnotation ?
-                    <AnnotationShow annotationId={this.state.curAnnotation} annotation={this.props.annotations[this.state.curAnnotation]} toggleShowAnnotation={this.toggleShowAnnotation} /> : null
+                    <div>
+                    <AnnotationShowContainer annotationId={this.state.curAnnotation} annotation={this.props.annotations[this.state.curAnnotation]} toggleShowAnnotation={this.toggleShowAnnotation}
+                    />
+                    </div> : null
                 }
             </div>
         )

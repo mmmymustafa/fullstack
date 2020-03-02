@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TrackShowContainer from '../track/track_show_container';
 
 class AnnotationForm extends React.Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class AnnotationForm extends React.Component {
             selected_lyrics: selectedLyrics
         });
         this.props.action(annotation);
+        this.props.toggleAnnotationForm()
     }
 
     render() {

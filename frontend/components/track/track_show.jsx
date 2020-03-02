@@ -10,6 +10,11 @@ class TrackShow extends React.Component{
            .then(() => this.props.track.annotationIds.map((annId) => this.props.fetchAnnotation(annId)))
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.annotations !== this.props.annotations) {
+    //     }
+    // }
+
     render() {
         return (
           <div className="track-page">

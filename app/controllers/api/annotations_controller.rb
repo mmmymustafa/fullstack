@@ -3,10 +3,11 @@ class Api::AnnotationsController < ApplicationController
 
     def create
         @annotation = Annotation.new(params.require(:annotation).permit(:user_id, :track_id, :body, :selected_lyrics))
+        @track = Track.find(@annotation.track_id)
         @annotation.user_id = current_user.id
         # @annotation.track_id = params[:track_id]
         if @annotation.save 
-            render "api/annotations/show"
+            render :create
         else
             render json: @annotation.errors.full_messages, status: 422
         end

@@ -871,7 +871,8 @@ h1 {
 }
 
 #yinw:hover{
-    background-color: #ffff64
+    background-color: #ffff64;
+    cursor: pointer;
 }
 
 .lyrics-line{

@@ -7,7 +7,7 @@ import { selectUser } from '../../reducers/selectors';
 
 class EditAnnotationForm extends React.Component {
     componentDidMount() {
-        this.props.fetchAnnotation(this.props.match.params.annotationId)
+        this.props.fetchAnnotation(this.props.annotation)
     }
 
     render() {
@@ -31,7 +31,6 @@ const mSTP = (state, ownProps) => {
     return {
         currentUserId,
         currentUser,
-        annotation: state.entities.annotations[ownProps.match.params.annotationId],
         formType: 'Update Annotation'
     }
 }
