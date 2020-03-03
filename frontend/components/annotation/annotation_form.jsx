@@ -32,7 +32,7 @@ class AnnotationForm extends React.Component {
             selected_lyrics: selectedLyrics
         });
         this.props.action(annotation);
-        this.props.toggleAnnotationForm()
+        this.props.formType === "Create Annotation" ? this.props.toggleAnnotationForm() : this.props.toggleEditForm()
     }
 
     render() {
@@ -49,7 +49,7 @@ class AnnotationForm extends React.Component {
                     </div>
                     <div className="annotation-form-buttons">
                     <div className="wtf"><div className="annotation-form-save-button"><input className="afsb" type="submit" value="Save" /></div></div>
-                        <div className="acab"><button onClick={this.props.toggleAnnotationForm} className="annotation-cancel-action-button">Cancel</button></div>
+                    <div className="acab"><button onClick={this.props.formType === "Create Annotation" ? this.props.toggleAnnotationForm : this.props.toggleEditForm} className="annotation-cancel-action-button">Cancel</button></div>
                     </div>
                 </form>
             </div>

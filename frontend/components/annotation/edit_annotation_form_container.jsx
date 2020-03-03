@@ -19,7 +19,8 @@ class EditAnnotationForm extends React.Component {
                 action={this.props.action}
                 fetchUser={this.props.fetchUser}
                 annotation={this.props.annotation}
-                formType={this.props.formType}/>
+                formType={this.props.formType}
+                toggleEditForm={this.props.toggleEditForm}/>
         );
     }
 }
