@@ -617,23 +617,33 @@ h1 {
 }
 
 .artist-songs{
-    background: white;
-    padding: 1rem;
+    background: #f7f7f7;
     margin-top: 2rem;
+    width: 30vw;
+}
+
+.artist-songs-title{
+   color: #9a9a9a
 }
 
 .artist-albums{
-    background: white;
-    padding: 1rem;
+    background: #f7f7f7;
     margin-top: 2rem;
+
 }
 
 .artist-album-list{
     margin-top: 1rem;
+    background-color: white;
 }
 
 .artist-track-list{
     margin-top: 1rem;
+}
+
+.artist-track-link{
+    display: flex;
+    background: white;
 }
 
 .charts-item{
@@ -723,13 +733,15 @@ h1 {
 .annotation{
     float: right;
     margin-right: 7rem;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     padding-left: 2rem;
     border-left: solid;
     padding-bottom: 1rem;
     border-width: thick;
     border-left-color: #99a7ee;
     height: max-content;
+    position: relative;
+    /* top: 120px; */
 }
 
 .annotation-contributor{
@@ -996,4 +1008,22 @@ h1 {
   -webkit-transform: translateY(12px);
   -moz-transform:    translateY(12px);
   transform:         translateY(12px); 
+}
+
+.artist-track-cover-img{
+    width: 75px;
+}
+
+.artist-track-info{
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+    font-weight: bolder;
+}
+
+.artist-name-track{
+    margin-top: 0.2rem;
+}
+
+.artist-track-link:hover{
+    background-color: #e9e9e9;;
 }

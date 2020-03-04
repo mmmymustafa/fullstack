@@ -46,9 +46,13 @@ class ArtistShow extends React.Component {
                     <ul className="artist-track-list">
                         {this.props.tracks.map(track => <Link to={`/tracks/${track.id}`}>
                             <div className="artist-track-link">
+                                <div className="artist-track-album-cover">
+                                <img className="artist-track-cover-img" src={track.album_cover}/>
+                                </div>
+                                <div className="artist-track-info">
                                 <p>{track.title}</p>
-                                <p>{this.props.artist.name}</p>
-                                <div>{this.state.albumCover}</div>
+                                <p className="artist-name-track">{this.props.artist.name}</p>
+                                </div>
                                 <br/>
                             </div>
                             </Link>)}

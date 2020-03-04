@@ -64,11 +64,13 @@ class Lyrics extends React.Component{
                 annotated[i].onclick = () => {
                     this.setState({ curAnnotation: this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id, showAnnotation: !this.state.showAnnotation})
                     console.log(this.state.curAnnotation)
-                    for (let i = 0; i < annotated.length; i++) {
-                        if (this.state.curAnnotation === this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id && this.state.showAnnotation === true){
-                            annotated[i].setAttribute("style", "background-color: #ffff64;")
+                    for (let j = 0; j < annotated.length; j++) {
+                        if (this.state.curAnnotation === this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[j].innerText)]].id && this.state.showAnnotation === true){
+                            annotated[j].setAttribute("style", "background-color: #ffff64;")
+                            document.getElementsByClassName("annotation")[0].setAttribute("style", `top: ${annotated[i].offsetTop}px`)
+                            console.log(annotated[j].offsetTop)
                         } else {
-                            annotated[i].setAttribute("style", "background-color: #e9e9e9;")
+                            annotated[j].setAttribute("style", "background-color: #e9e9e9;")
                         }
                     }
                 }
