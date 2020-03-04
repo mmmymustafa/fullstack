@@ -75,7 +75,7 @@ Here I stand in the light of day
 Let the storm rage on')
 
 artist2 = Artist.create(name:'Timon & Pumbaa', about: 'Don\'t try to come up with a better duo because you can\'t', picture_url: 'https://resizing.flixster.com/2fODhxpP6Mr8W-cB6GR-BQPAERg=/300x300/v1.bjszODQxOTY7ajsxODMxOTsxMjAwOzIwNDg7MTE1Mg', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
-album2 = Album.create(title: 'Lion King Soundtrack', release_date: 'NA', artist_id: artist2.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/0/0e/The_Lion_King_%28soundtrack%29.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
+album2 = Album.create(title: 'Lion King Soundtrack', release_date: 'June 24, 1994', artist_id: artist2.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/0/0e/The_Lion_King_%28soundtrack%29.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
 track2 = Track.create(title: 'Hakuna Matata', artist_id: artist2.id, album_id: album2.id, about: 'From the movie Lion King', lyrics: 
 'Hakuna Matata!
 What a wonderful phrase
@@ -104,7 +104,7 @@ Pumbaa! Not in front of the kids!
 Oh... sorry')
 
 artist3 = Artist.create(name:'Aladdin', about: 'Straight up pimpin with his flyin carpet boiiii', picture_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv8FCbhgPJzOPaGLQ60RZUMVpn0n0sXHIAW0qxR_Vl8hsWAFy9Kg&s', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
-album3 = Album.create(title: 'Aladdin Soundtrack', release_date: 'NA', artist_id: artist3.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/4/4a/Disney%27s_Aladdin_soundtrack_cover.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
+album3 = Album.create(title: 'Aladdin Soundtrack', release_date: 'November 25, 1992', artist_id: artist3.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/4/4a/Disney%27s_Aladdin_soundtrack_cover.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
 track3 = Track.create(title: 'A New World', artist_id: artist3.id, album_id: album3.id, about: 'From the movie Lion King', lyrics: 
 'I can show you the world
 Shining, shimmering, splendid
@@ -150,7 +150,7 @@ A wondrous place
 For you and me')
 
 artist4 = Artist.create(name:'Hannah Montana', about: 'idk she kinda reminds me of Miley Cyrus', picture_url: 'http://images4.fanpop.com/image/photos/15800000/Hannah-Montana-rocket-girl-15849131-300-300.jpg', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
-album4 = Album.create(title: 'Hannah Montana 2: Meet Miley Cyrus', release_date: 'NA', artist_id: artist4.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/3/35/Hannah_Montana_2.png', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
+album4 = Album.create(title: 'Hannah Montana 2: Meet Miley Cyrus', release_date: 'June 26, 2007', artist_id: artist4.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/3/35/Hannah_Montana_2.png', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
 track4 = Track.create(title: 'No Body\'s Perfect', artist_id: artist4.id, album_id: album4.id, about: 'From the movie Lion King', lyrics: 
 'Everybody makes mistakes
 Everybody has those days

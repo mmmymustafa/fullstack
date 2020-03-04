@@ -24,13 +24,14 @@ class TrackShow extends React.Component{
                 <div className="track-header-titles">
                 <span className="track-title"><h2>{this.props.track.title}</h2></span>
                 <span id="track-artist-name"><Link to={`/artists/${this.props.artist.id}`} className="track-artist-name">{this.props.artist.name}</Link></span>
-                <span id="track-album-title">Album<Link className="track-album-title">{this.props.album.title}</Link></span>
+                {/* <span id="track-album-title">Album<Link className="track-album-title">{this.props.album.title}</Link></span> */}
                 </div>
             </div>
             <div className="track-body">
                 <p className="track-lyrics-title">{this.props.track.title} lyrics</p>
                 <LyricsContainer />
             </div >
+            
           </div>
         )
     }

@@ -38,21 +38,33 @@ class Lyrics extends React.Component{
     }
 
     onHighlight() {
-        for (let i = 0; i < document.getElementsByClassName("yinw").length; i++){
-            if (document.getSelection().toString() !== "" && !document.getSelection().containsNode(document.getElementsByClassName("yinw")[i], true)){
-            this.setState({
-                showComponent: true,
-                showAnnotation: false,
-            });
-            let annotated = document.getElementsByClassName("yinw")
-                for (let i = 0; i < annotated.length; i++) {
-                    annotated[i].setAttribute("style", "background-color: #e9e9e9;")
-                }
-            } else {
+        if (document.getElementsByClassName("yinw").length > 0){
+            for (let i = 0; i < document.getElementsByClassName("yinw").length; i++){
+                if (document.getSelection().toString() !== "" && !document.getSelection().containsNode(document.getElementsByClassName("yinw")[i], true)){
+                console.log(document.getSelection().toString())    
                 this.setState({
-                showComponent: false,
-                }) 
-                break
+                    showComponent: true,
+                    showAnnotation: false,
+                });
+                let annotated = document.getElementsByClassName("yinw")
+                    for (let i = 0; i < annotated.length; i++) {
+                        annotated[i].setAttribute("style", "background-color: #e9e9e9;")
+                    }
+                } else {
+                console.log("hitting")    
+                    this.setState({
+                    showComponent: false,
+                    }) 
+                    break
+                }
+            }
+        } else {
+            if (document.getSelection().toString() !== "") {
+                console.log(document.getSelection().toString())
+                this.setState({
+                    showComponent: true,
+                    showAnnotation: false,
+                })
             }
         }
     }
@@ -67,10 +79,14 @@ class Lyrics extends React.Component{
                     for (let j = 0; j < annotated.length; j++) {
                         if (this.state.curAnnotation === this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[j].innerText)]].id && this.state.showAnnotation === true){
                             annotated[j].setAttribute("style", "background-color: #ffff64;")
+                            annotated[j].onmouseenter = () => (null)
+                            annotated[j].onmouseleave = () => (null)
                             document.getElementsByClassName("annotation")[0].setAttribute("style", `top: ${annotated[i].offsetTop}px`)
-                            console.log(annotated[j].offsetTop)
+                            document.getElementsByClassName("arrow-left")[0].setAttribute("style", `margin-top: ${annotated[i].offsetTop + 32}px`)
                         } else {
                             annotated[j].setAttribute("style", "background-color: #e9e9e9;")
+                            annotated[j].onmouseenter = () => (annotated[j].setAttribute("style", "background-color: #ffff64;"))
+                            annotated[j].onmouseleave = () => (annotated[j].setAttribute("style", "background-color: #e9e9e9;"))
                         }
                     }
                 }
