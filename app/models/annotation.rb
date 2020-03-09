@@ -3,4 +3,5 @@ class Annotation < ApplicationRecord
 
     belongs_to :user
     belongs_to :track
+    has_many :comments, as: :commentable
 end

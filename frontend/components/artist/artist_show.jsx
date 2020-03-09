@@ -61,11 +61,11 @@ class ArtistShow extends React.Component {
                 <div className="artist-albums">
                     <h3>{this.props.artist.name} Albums</h3>
                     <div className="artist-album-list">
-                        {this.props.albums.map(album => <Link to={`/album/${album.id}`}>
+                        {this.props.albums.map(album => <div className="artist-album-link"><Link to={`/album/${album.id}`}>
                                                                 <img className="artist-album-cover" src={album.album_cover_url} />
                                                                 <p className="artist-album-title">{album.title}</p>
                                                                 <p className="artist-album-year">{album.release_date.slice(album.release_date.length - 4)}</p>
-                                                                </Link>)}
+                                                                </Link></div>)}
                     </div>
                 </div>
                         </div>

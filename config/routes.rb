@@ -5,8 +5,14 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
     resources :artists, only: [:create, :index ,:show]
-    resources :albums, only: [:index ,:show]
-    resources :tracks, only: [:index ,:show] 
-    resources :annotations, only: [:create, :update, :show]
+    resources :albums, only: [:index ,:show] do
+      resources :comments, only: [:create, :index, :show, :update, :destroy]
+    end
+    resources :tracks, only: [:index ,:show] do
+      resources :comments, only: [:create, :index, :show, :update, :destroy]
+    end
+    resources :annotations, only: [:create, :update, :show] do
+      resources :comments, only: [:create, :index, :show, :update, :destroy]
+    end
   end
 end

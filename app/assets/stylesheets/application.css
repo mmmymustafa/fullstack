@@ -629,7 +629,7 @@ h1 {
 .artist-albums{
     background: #f7f7f7;
     margin-top: 2rem;
-
+    color: #9a9a9a;
 }
 
 .artist-album-list{
@@ -732,7 +732,7 @@ h1 {
 
 .annotation{
     float: right;
-    margin-right: 7rem;
+    /* margin-right: 7rem; */
     /* margin-top: 5rem; */
     padding-left: 2rem;
     border-left: solid;
@@ -750,7 +750,7 @@ h1 {
 
 .annotation-body{
     margin: 1rem 0;
-    width: 25rem;
+    width: 23rem;
     font-size: 1.2rem;
     line-height: 1.8rem;
     padding-bottom: 1rem;
@@ -870,11 +870,6 @@ h1 {
 
 .wtf{
     transition: background-color .3s,border-color .3s;
-}
-
-.wtf:hover{
-    transition: none;
-    background-color: rgba(14,203,39,.2);
 }
 
 #yinw{
@@ -1039,3 +1034,118 @@ h1 {
 .annotation-show{
     display: flex;
 }
+
+.artist-album-cover{
+    width: 175px
+}
+
+.artist-album-list{
+    padding: 1rem;
+    width: fit-content;
+}
+
+.artist-album-link{
+    margin: -0.25rem;
+    padding: 0.25rem;
+    text-align: center;
+    font-size: 14px;
+}
+
+.artist-album-link:hover{
+    background-color: #e9e9e9;
+}
+
+.artist-album-title{
+    margin-top: 0.4rem
+}
+
+.artist-album-year{
+    color: #9a9a9a;
+    margin-top: 0.1rem;
+}
+
+.not-signed-creating-comment{
+border: solid;
+    padding: 0.5rem;
+    height: fit-content;
+    width: fit-content;
+    background-color: white;
+    margin: 0rem 3.5rem;
+    margin-top: 0.25rem;
+}
+
+.comments-component{
+    background-color: rgba(204,204,204,.2);
+    padding: .75rem;
+    width: fit-content;
+    margin-left: 7rem;
+    margin-top: 2rem;
+}
+
+.comment-textarea{
+    height: 1rem;
+    overflow: hidden;
+    resize: none;
+    border: .2rem solid #ccc;
+    border-radius: 0;
+    width: 25rem;
+    color: #000;
+    font-family: Programme,sans-serif;
+    font-size: inherit;
+
+    padding: 0.5rem 0.25rem;
+}
+
+.comment-submit{
+    display: none;
+    margin-top: 0.75rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border: #0ecb27;
+    border-style: solid;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    color: #0ecb27;
+    transition: background-color .3s,border-color .3s;
+}
+
+.comment-submit:hover{
+    transition: none;
+    background-color: rgba(14,203,39,.2);
+}
+
+.comment-textarea:focus{
+    height: 2rem;
+    outline: none;
+    box-shadow: #99a7ee 0 0 0.3em inset;
+}
+
+.comment-show{
+    border-top: 1px solid #99a7ee;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+}
+
+.comment-time-ago{
+    color: #9a9a9a;
+    font-family: Programme,sans-serif;
+    font-size: .75em;
+    align-self: center;
+    font-weight: 900;
+}
+
+.comment-body{
+    margin: 1rem 0;
+}
+
+.comment-author{
+    font-weight: 900;
+    font-family: Programme,sans-serif;
+}
+
+.user-date-comment-info{
+    display: flex;
+    justify-content: space-between;
+}
+
