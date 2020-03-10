@@ -57,15 +57,15 @@ class AnnotationShow extends React.Component {
                 {this.props.curUserId === this.props.annotation.user_id ?
                             <div className="annotation-author-suugestions"> 
                             <span className="aeb"><button onClick={this.handleEdit} className="annotation-edit-button">Edit</button></span>
-                                    <div className="annotation-suggestions-show">
+                                {this.props.comments.length > 0 ? <div className="annotation-suggestions-show">
                                     <div className="suggestions-header">Disneyus community suggestions:</div>
                         <div className="annotation-comments">
                             <AnnotationCommentShowContainer comments={this.props.comments} />
-                        </div></div>
+                            </div></div> : null}
                         </div> 
                         : <div className="annotation-suggestions"><AnnotationCommentFormContainer annotationId={this.props.annotation.id} commentableType="Annotation" userId={this.props.curUserId} />
                                 <div className="annotation-comments">
-                                <div className="suggestions-header-not-author">Disneyus community suggestions:</div>
+                                    {this.props.comments.length > 0 ? <div className="suggestions-header-not-author">Disneyus community suggestions:</div> : null}
                                 <AnnotationCommentShowContainer comments={this.props.comments} />
                             </div></div>}
                 </div> : null}
