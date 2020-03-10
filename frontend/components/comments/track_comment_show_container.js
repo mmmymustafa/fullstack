@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CommentShow from './comment_show';
+import TrackCommentShow from './track_comment_show';
 
 
 const mSTP = (state, ownProps) => {
@@ -8,4 +8,4 @@ const mSTP = (state, ownProps) => {
     }
 }
 
-export default connect(mSTP, null)(CommentShow);
+export default connect(mSTP, null)(TrackCommentShow);

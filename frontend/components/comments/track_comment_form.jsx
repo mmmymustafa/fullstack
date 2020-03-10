@@ -1,18 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TrackShowContainer from '../track/track_show_container';
 
-class CommentForm extends React.Component {
+class TrackCommentForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.comment;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showSubmitButton = this.showSubmitButton.bind(this);
     }
-
-    // componentDidMount() {
-    //     this.props.fetchUser(this.props.currentUserId)
-    // }
 
     update(field) {
         return e => {
@@ -21,7 +16,7 @@ class CommentForm extends React.Component {
     }
 
     showSubmitButton(){
-        document.getElementsByClassName("comment-submit")[0].setAttribute("style", "display: block")    
+        document.getElementsByClassName("track-comment-submit")[0].setAttribute("style", "display: block")    
     }
 
     handleSubmit(e) {
@@ -33,6 +28,8 @@ class CommentForm extends React.Component {
             commentable_type: type,
         });
         this.props.action(comment);
+        this.setState({body: ''})
+        document.getElementsByClassName("track-comment-submit")[0].setAttribute("style", "display: none")    
     }
 
     render() {
@@ -50,7 +47,7 @@ class CommentForm extends React.Component {
                         />
                     </div>
                     <div className="comment-form-buttons">
-                        <div className="wtf"><div className="comment-form-save-button"><input className="comment-submit" type="submit" value="Submit" /></div></div>
+                        <div className="wtf"><div className="comment-form-save-button"><input className="track-comment-submit" type="submit" value="Submit" /></div></div>
                     </div>
                 </form>
                 </div> : <div className="not-signed-creating-comment">
@@ -63,4 +60,4 @@ class CommentForm extends React.Component {
     }
 }
 
-export default CommentForm
+export default TrackCommentForm

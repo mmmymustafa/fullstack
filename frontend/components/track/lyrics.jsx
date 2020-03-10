@@ -81,8 +81,10 @@ class Lyrics extends React.Component{
                             annotated[j].setAttribute("style", "background-color: #ffff64;")
                             annotated[j].onmouseenter = () => (null)
                             annotated[j].onmouseleave = () => (null)
+                            // document.getElementsByClassName("annotation-comments")[0].setAttribute("style", `margin-top: ${annotated[i].offsetTop - 32}px`)
                             document.getElementsByClassName("annotation")[0].setAttribute("style", `top: ${annotated[i].offsetTop}px`)
                             document.getElementsByClassName("arrow-left")[0].setAttribute("style", `margin-top: ${annotated[i].offsetTop + 32}px`)
+                            // document.getElementsByClassName("annotation-comments")[0].setAttribute("style", `top: ${annotated[i].offsetTop + 10}px`)
                         } else {
                             annotated[j].setAttribute("style", "background-color: #e9e9e9;")
                             annotated[j].onmouseenter = () => (annotated[j].setAttribute("style", "background-color: #ffff64;"))

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class CommentShow extends React.Component {
+class TrackCommentShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -38,8 +38,6 @@ class CommentShow extends React.Component {
     }
 
     render() {
-        // if (this.props.comments)
-        console.log("hitting comments")
         return (
         Object.keys(this.props.comments).map((id) => (
                 <div className="comment-show">
@@ -55,4 +53,4 @@ class CommentShow extends React.Component {
     }
 }
 
-export default CommentShow
+export default TrackCommentShow

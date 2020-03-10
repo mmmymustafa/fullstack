@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LyricsContainer from './lyrics_container';
-import TrackCommentFormContainer from '../comments/create_track_comment_form_container';
-import CommentShowContainer from '../comments/comment_show_container'
+import TrackCommentFormContainer from '../comments/track_create_comment_form_container';
+import TrackCommentShowContainer from '../comments/track_comment_show_container'
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -40,7 +40,7 @@ class TrackShow extends React.Component{
                 <TrackCommentFormContainer trackId={this.props.track.id} commentableType="Track" userId={this.props.userId}/>
                 </div>
                 <div className="comments">
-                <CommentShowContainer comments={this.props.comments}/>
+                <TrackCommentShowContainer comments={this.props.comments}/>
                 </div>
                 </div>
             </div >
