@@ -4,4 +4,5 @@ class Annotation < ApplicationRecord
     belongs_to :user
     belongs_to :track
     has_many :comments, as: :commentable
+    has_many :upvotes, as: :voteable
 end

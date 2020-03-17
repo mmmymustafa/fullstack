@@ -1,11 +1,25 @@
 import { connect } from 'react-redux';
 import TrackCommentShow from './track_comment_show';
+import { fetchUpvotes, fetchUpvote } from '../../actions/upvotes_actions';
+
 
 
 const mSTP = (state, ownProps) => {
+    // const upvotes = {}
+    // Object.values(state.entities.upvotes).filter((upvote) => upvote.voteable_type === "Comment").forEach((el) => upvotes[el.user_id] = el)
     return {
-        curUserId: state.session.id
+        curUserId: state.session.id,
+        // upvotes
     }
 }
 
-export default connect(mSTP, null)(TrackCommentShow);
+const mDTP = dispatch => {
+    return {
+        fetchUpvote: (voteId) => dispatch(fetchUpvote(voteId)),
+        fetchUpvotes: () => dispatch(fetchUpvotes())
+    }
+}
+
+
+
+export default connect(mSTP, mDTP)(TrackCommentShow);

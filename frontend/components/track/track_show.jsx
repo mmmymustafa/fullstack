@@ -15,6 +15,7 @@ class TrackShow extends React.Component{
         .then(() => this.props.fetchAlbum(this.props.track.album_id))
         .then(() => this.props.track.annotationIds.map((annId) => this.props.fetchAnnotation(annId)))
         .then(() => this.props.track.commentIds.map((comId) => this.props.fetchTrackComment(this.props.trackId, comId)))
+        .then(() => this.props.fetchUpvotes())
             // .then(() => this.props.fetchTrackComments(this.props.trackId))
     }
 
@@ -40,7 +41,7 @@ class TrackShow extends React.Component{
                 <TrackCommentFormContainer trackId={this.props.track.id} commentableType="Track" userId={this.props.userId}/>
                 </div>
                 <div className="comments">
-                <TrackCommentShowContainer comments={this.props.comments}/>
+                <TrackCommentShowContainer comments={this.props.comments} upvotes={this.props.upvotes}/>
                 </div>
                 </div>
             </div >

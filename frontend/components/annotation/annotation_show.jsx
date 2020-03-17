@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import EditAnnotationForm from '../annotation/edit_annotation_form_container'
 import AnnotationCommentFormContainer from '../comments/annotation_create_comment_form_container';
-import AnnotationCommentShowContainer from '../comments/annotation_comment_show_container'
+import AnnotationCommentShowContainer from '../comments/annotation_comment_show_container';
+import UpvoteShowContainer from '../upvote/upvote_container'
 
 
 
@@ -21,6 +22,8 @@ class AnnotationShow extends React.Component {
 
     componentDidMount(){
         this.props.annotation.commentIds.map((comId) => this.props.fetchAnnotationComment(this.props.annotationId, comId))
+        // this.props.annotation.voteIds.map((voteId) => this.props.fetchUpvote(voteId))
+        // this.props.fetchUpvotes()
     }
 
     showAnnotationInfo(){
@@ -54,6 +57,7 @@ class AnnotationShow extends React.Component {
                 {this.state.showComponent ? <div className="annotation">
                 <h3 className="annotation-contributer">Contributor: {this.props.annotation.author}</h3>
                 <p className="annotation-body">{this.props.annotation.body}</p>
+                <UpvoteShowContainer votes={this.props.upvotes} voteableId={this.props.annotation.id} voteableType="Annotation" userId={this.props.curUserId}/>
                 {this.props.curUserId === this.props.annotation.user_id ?
                             <div className="annotation-author-suugestions"> 
                             <span className="aeb"><button onClick={this.handleEdit} className="annotation-edit-button">Edit</button></span>

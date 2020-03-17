@@ -1219,5 +1219,57 @@ border: solid;
     margin-top: 2rem;
 }
 
+.voting-thumbs{
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.upvote-thumb{
+    width: 5%;
+    margin-right: 0.5rem; 
+    cursor: pointer;
+}
+
+.downvote-thumb{
+    width: 5%;
+    margin-left:0.5rem;
+    cursor: pointer;
+}
+
+.upvote-thumb:hover .upvote-thumb-path{ 
+    fill: #0ecb27;
+}
+
+.downvote-thumb:hover .downvote-thumb-path{
+    fill: #ff1414;
+}
+
+.upvote-thumb-path{
+    fill: #9a9a9a
+}
+
+.downvote-thumb-path{
+    fill: #9a9a9a
+}
+
+.number-of-votes{
+    font-family: Programme, sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.upthumb-comments{
+    width: 11.5%;
+}
+
+.downthumb-comments{
+    width: 11.5%;
+}
+
+
+.voting-thumbs-comments{
+    width: 10rem;
+}
+
 
 

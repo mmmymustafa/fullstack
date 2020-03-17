@@ -10,6 +10,7 @@ import { selectTrack,
         selectTracksAnnotations } from '../../reducers/selectors';
 import { fetchAnnotation } from '../../actions/annotation_actions';
 import { fetchTrackComment } from '../../actions/comment_actions';
+import { fetchUpvotes } from '../../actions/upvotes_actions'
 
 const mSTP = (state, ownProps) => {
     const trackId = parseInt(ownProps.match.params.trackId);
@@ -23,7 +24,8 @@ const mSTP = (state, ownProps) => {
         album,
         userId: state.session.id,
         annotations: state.entities.annotations,
-        comments: Object.values(state.entities.comments).filter((comment) => comment.commentable_id === trackId && comment.commentable_type === "Track") 
+        comments: Object.values(state.entities.comments).filter((comment) => comment.commentable_id === trackId && comment.commentable_type === "Track"),
+        upvotes: state.entities.upvotes
     }
 }
 
@@ -32,7 +34,8 @@ const mDTP = dispatch => ({
     fetchArtist: artistId => dispatch(fetchArtist(artistId)),
     fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
     fetchAnnotation: annotationId => dispatch(fetchAnnotation(annotationId)),
-    fetchTrackComment: (trackId, commId) => dispatch(fetchTrackComment(trackId, commId))
+    fetchTrackComment: (trackId, commId) => dispatch(fetchTrackComment(trackId, commId)),
+    fetchUpvotes: () => dispatch(fetchUpvotes())
 })
 
 export default withRouter(connect(mSTP, mDTP)(TrackShow));
