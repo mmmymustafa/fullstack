@@ -37,7 +37,7 @@ class Footer extends React.Component {
                 </div>
                 <div className="artists-list-container">
                     <div className="all-artists-header">All Artists: </div>
-                    {alpha.map(letter => <div className={`${letter}-letter-container uni-letter-container`} onClick={() => this.alphaLetterSubmit(letter)}><Link className={`${letter}-letter-link uni-letter-link`} to={`/artists-list/${letter}`}>{letter}</Link></div>)}
+                    {alpha.map(letter => <div className={`${letter}-letter-container uni-letter-container`} onClick={() => this.alphaLetterSubmit(letter)}><Link target="_blank" className={`${letter}-letter-link uni-letter-link`} to={`/artists-list/${letter}`}>{letter}</Link></div>)}
                 </div>
             </div>
         )

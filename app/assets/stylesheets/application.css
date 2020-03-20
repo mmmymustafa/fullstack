@@ -560,7 +560,8 @@ h1 {
     margin-top: 2rem;
     margin-left: 10rem;
     border: solid white;
-    border-radius: 100%
+    border-radius: 100%;
+    width: 300px;
 }
 
 .artist-featured-title{
@@ -911,139 +912,6 @@ h1 {
 .aeb.not-logged{
     opacity: 0.4;
 }
-
-/* [data-tooltip],
-.tooltip {
-  position: relative;
-  cursor: pointer;
-} */
-
-/* Base styles for the entire tooltip */
-/* [data-tooltip]:before,
-[data-tooltip]:after,
-.tooltip:before,
-.tooltip:after {
-  position: absolute;
-  visibility: hidden;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition: 
-      opacity 0.2s ease-in-out,
-        visibility 0.2s ease-in-out,
-        -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-    -moz-transition:    
-        opacity 0.2s ease-in-out,
-        visibility 0.2s ease-in-out,
-        -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-    transition:         
-        opacity 0.2s ease-in-out,
-        visibility 0.2s ease-in-out,
-        transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform:    translate3d(0, 0, 0);
-  transform:         translate3d(0, 0, 0);
-  pointer-events: none;
-}
-
-/* Show the entire tooltip on hover and focus */
-/* [data-tooltip]:hover:before,
-[data-tooltip]:hover:after,
-[data-tooltip]:focus:before,
-[data-tooltip]:focus:after,
-.tooltip:hover:before,
-.tooltip:hover:after,
-.tooltip:focus:before,
-.tooltip:focus:after {
-  visibility: visible;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-} */
-
-/* Base styles for the tooltip's directional arrow */
-/* .tooltip:before,
-[data-tooltip]:before {
-  z-index: 1001;
-  background: transparent;
-  content: "";
-} */
-
-/* Base styles for the tooltip's content area */
-/* .tooltip:after,
-[data-tooltip]:after {
-    z-index: 1000;
-    padding: 8px;
-    width: 160px;
-    background-color: white;
-    color: black;
-    content: attr(data-tooltip);
-    font-size: 14px;
-    line-height: 1.2;
-    border: solid;
-}  */
-
-/* Bottom */
-/* .tooltip-bottom:before,
-.tooltip-bottom:after {
-  top: 100%;
-  bottom: auto;
-  left: 50%;
-}
-
-.tooltip-bottom:before {
-  margin-top: -12px;
-  margin-bottom: 0;
-  border-top-color: transparent;
-  border-bottom-color: #000;
-  border-bottom-color: hsla(0, 0%, 20%, 0.9);
-}
-
-.tooltip-bottom:hover:before,
-.tooltip-bottom:hover:after,
-.tooltip-bottom:focus:before,
-.tooltip-bottom:focus:after {
-  -webkit-transform: translateY(12px);
-  -moz-transform:    translateY(12px);
-  transform:         translateY(12px); 
-} */
-
-/* Right */
-/* .tooltip-right:before,
-.tooltip-right:after {
-  bottom: 50%;
-  left: 100%;
-}
-
-.tooltip-right:before {
-  margin-bottom: 0;
-  margin-left: -12px;
-  border-top-color: transparent;
-  border-right-color: #000;
-  border-right-color: hsla(0, 0%, 20%, 0.9);
-}
-
-.tooltip-right:hover:before,
-.tooltip-right:hover:after,
-.tooltip-right:focus:before,
-.tooltip-right:focus:after {
-  -webkit-transform: translateX(12px);
-  -moz-transform:    translateX(12px);
-  transform:         translateX(12px); 
-} */
-
-/* Move directional arrows down a bit for left/right tooltips */
-/* .tooltip-left:before,
-.tooltip-right:before {
-  top: 3px;
-} */
-
-/* Vertically center tooltip content for left/right tooltips */
-/* .tooltip-left:after,
-.tooltip-right:after {
-  margin-left: 0;
-  margin-bottom: -16px;
-} */
 
 .artist-track-cover-img{
     width: 75px;
@@ -1671,5 +1539,171 @@ border: solid;
 
 .artists-list-all{
     margin-top: 1rem
+}
+
+.videos{
+    background: black;
+    color: white;
+    padding: 4.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.videos-header{
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'WaltographRegular';
+}
+
+.main-video-container{
+    display: flex;
+    margin-top: 2rem;
+}
+
+.main-video-info{
+    margin-top: -1.35rem;
+    margin-left: 4rem;
+    letter-spacing: normal;
+}
+
+.main-video-sub-info{
+    display: flex;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+}
+
+.main-video-author-link{
+    color: white;
+}
+
+.main-video-author{
+    white-space: pre;
+}
+
+.main-video-topic{
+    margin-left: -0.6rem;
+}
+
+.main-video-topic-img{
+    width: 380px
+}
+
+.main-video-title{
+    margin-top: 0.75rem;
+    font-size: 1.75rem;
+}
+
+.main-video-desc{
+    margin-top: 1rem;
+    line-height: normal;
+}
+
+.main-video-release-date{
+    color: rgb(154, 154, 154);
+}
+
+.video-player-container{
+    padding-top: 30vh;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 117rem;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    width: 100vw;
+    height: 169vh;
+    text-align: center;
+}
+
+.video-player-close-button{
+    margin: 0rem 16rem;
+    text-align: end;
+    cursor: pointer;
+}
+
+.other-video-thumbnail-img{
+    width: 250px;
+}
+
+.other-videos-container{
+    margin-top: 3rem;
+    display: flex;
+}
+
+.other-video-card{
+    border-top: solid;
+    padding-top: 1rem;
+    margin-right: 4rem;
+    width: 15.7rem;
+}
+
+.other-video-topic-img{
+    width: 50px;
+}
+
+.other-video-thumbnail{
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.other-video-title{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.other-video-sub-info{
+    display: flex;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+}
+
+.other-video-author{
+    white-space: pre;
+}
+
+.other-video-author-link{
+    color: white;
+}
+
+.other-video-release-date{
+    color: rgb(154, 154, 154);
+}
+
+.other-video-topic-two{
+    margin-top: -0.71rem;
+}
+
+.other-video-topic-img-two{
+    filter: invert(1);
+    overflow: hidden;
+    object-fit: cover;
+    width: 80px;
+    height: 2.5rem;
+}
+
+.other-video-topic-img-three{
+    filter: invert(1);
+    width: 40px;
+}
+
+.other-video-topic-three{
+    margin-top: -0.2rem
+}
+
+.other-video-card-four{
+    margin-right: 0rem
+}
+
+.other-video-topic-four{
+    margin-top: -0.6rem;
+}
+
+.other-video-topic-img-four{
+    filter: invert(1);
+    width: 85px;
 }
 
