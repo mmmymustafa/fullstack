@@ -4,14 +4,6 @@ class UpvoteShow extends React.Component {
 
     constructor(props){
         super(props)
-        const getVoteIdByValues = (userId, voteableId, voteableType) => {
-            for (let i = 0; i < Object.values(this.props.votes).length; i++) {
-                if (Object.values(this.props.votes)[i].user_id === userId && Object.values(this.props.votes)[i].voteable_id === voteableId && Object.values(this.props.votes)[i].voteable_type === voteableType) {
-                    return Object.values(this.props.votes)[i].id
-                }
-            }
-        }
-        let voteId = getVoteIdByValues(this.props.userId, this.props.voteableId, this.props.voteableType)
         this.state = {
             userVote: this.props.votes[this.props.curUserId === null ? 0 : this.props.curUserId],
             numVotes: this.props.numVotes

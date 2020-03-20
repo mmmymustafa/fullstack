@@ -2,6 +2,10 @@ export const selectTrack = ({ tracks }, trackId) => {
     return tracks[trackId] || {};
 };
 
+export const selectAlbum = ({ albums }, albumId) => {
+    return albums[albumId] || {};
+};
+
 export const selectAnnotation = ({ annotations }, annotationId) => {
     return annotations[annotationId] || {};
 };
@@ -16,6 +20,14 @@ export const selectTracksAlbum = ({ albums }, track) => {
 
 export const selectTracksArtist = ({ artists }, track) => {
     return artists[track.artist_id] || {};
+};
+
+export const selectAlbumsArtist = ({ artists }, album) => {
+    return artists[album.artist_id] || {};
+};
+
+export const selectAlbumsTracks = ({ tracks }, album) => {
+    return album.tracksIds.map(id => tracks[id])
 };
 
 export const selectTracksAnnotations = ({ annotations }, track) => {

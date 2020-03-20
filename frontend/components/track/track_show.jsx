@@ -2,11 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LyricsContainer from './lyrics_container';
 import TrackCommentFormContainer from '../comments/track_create_comment_form_container';
-import TrackCommentShowContainer from '../comments/track_comment_show_container'
+import TrackCommentShowContainer from '../comments/track_comment_show_container';
+import ArtistTooltip from '../artist/artist_tooltip'
 
 class TrackShow extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            showTooltip: false
+        }
+        this.toggleShowTooltip = this.toggleShowTooltip.bind(this)
     }
 
     componentDidMount() {
@@ -19,9 +24,16 @@ class TrackShow extends React.Component{
             // .then(() => this.props.fetchTrackComments(this.props.trackId))
     }
 
-
+    toggleShowTooltip() {
+        if (document.getElementsByClassName("track-artist-name")[0]) {
+            const artistLink = document.getElementsByClassName("track-artist-name")[0];
+            artistLink.onmouseenter = () => (this.setState({ showTooltip: true }))
+            artistLink.onmouseleave = () => (this.setState({ showTooltip: false }))
+        }
+    }
 
     render() {
+        this.toggleShowTooltip()
         return (
           <div className="track-page">
             <div className="track-header">
@@ -29,8 +41,8 @@ class TrackShow extends React.Component{
                 {/* Using Frozen Soundtrack picture only for testing purposes */}
                 <div className="track-header-titles">
                 <span className="track-title"><h2>{this.props.track.title}</h2></span>
-                <span id="track-artist-name"><Link to={`/artists/${this.props.artist.id}`} className="track-artist-name">{this.props.artist.name}</Link></span>
-                {/* <span id="track-album-title">Album<Link className="track-album-title">{this.props.album.title}</Link></span> */}
+                <div id="track-artist-name"><Link to={`/artists/${this.props.artist.id}`} className="track-artist-name">{this.props.artist.name}</Link></div>
+                        <span id="track-album-title">Album<Link to={`/albums/${this.props.track.album_id}`} className="track-album-title">{this.props.album.title}</Link><ArtistTooltip artist={this.props.artist} showTooltip={this.state.showTooltip} /></span>
                 </div>
             </div>
             <div className="track-body">

@@ -646,6 +646,10 @@ h1 {
     background: white;
 }
 
+.charts{
+    margin-bottom: 5rem;
+}
+
 .charts-item{
     display: flex;
     flex-direction: row;
@@ -908,14 +912,14 @@ h1 {
     opacity: 0.4;
 }
 
-[data-tooltip],
+/* [data-tooltip],
 .tooltip {
   position: relative;
   cursor: pointer;
-}
+} */
 
 /* Base styles for the entire tooltip */
-[data-tooltip]:before,
+/* [data-tooltip]:before,
 [data-tooltip]:after,
 .tooltip:before,
 .tooltip:after {
@@ -943,7 +947,7 @@ h1 {
 }
 
 /* Show the entire tooltip on hover and focus */
-[data-tooltip]:hover:before,
+/* [data-tooltip]:hover:before,
 [data-tooltip]:hover:after,
 [data-tooltip]:focus:before,
 [data-tooltip]:focus:after,
@@ -955,33 +959,32 @@ h1 {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
-}
+} */
 
 /* Base styles for the tooltip's directional arrow */
-.tooltip:before,
+/* .tooltip:before,
 [data-tooltip]:before {
   z-index: 1001;
-  border: 6px solid transparent;
   background: transparent;
   content: "";
-}
+} */
 
 /* Base styles for the tooltip's content area */
-.tooltip:after,
+/* .tooltip:after,
 [data-tooltip]:after {
-  z-index: 1000;
-  padding: 8px;
-  width: 160px;
-  background-color: #000;
-  background-color: hsla(0, 0%, 20%, 0.9);
-  color: #fff;
-  content: attr(data-tooltip);
-  font-size: 14px;
-  line-height: 1.2;
-}
+    z-index: 1000;
+    padding: 8px;
+    width: 160px;
+    background-color: white;
+    color: black;
+    content: attr(data-tooltip);
+    font-size: 14px;
+    line-height: 1.2;
+    border: solid;
+}  */
 
 /* Bottom */
-.tooltip-bottom:before,
+/* .tooltip-bottom:before,
 .tooltip-bottom:after {
   top: 100%;
   bottom: auto;
@@ -1003,7 +1006,44 @@ h1 {
   -webkit-transform: translateY(12px);
   -moz-transform:    translateY(12px);
   transform:         translateY(12px); 
+} */
+
+/* Right */
+/* .tooltip-right:before,
+.tooltip-right:after {
+  bottom: 50%;
+  left: 100%;
 }
+
+.tooltip-right:before {
+  margin-bottom: 0;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: #000;
+  border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  -moz-transform:    translateX(12px);
+  transform:         translateX(12px); 
+} */
+
+/* Move directional arrows down a bit for left/right tooltips */
+/* .tooltip-left:before,
+.tooltip-right:before {
+  top: 3px;
+} */
+
+/* Vertically center tooltip content for left/right tooltips */
+/* .tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
+} */
 
 .artist-track-cover-img{
     width: 75px;
@@ -1271,5 +1311,365 @@ border: solid;
     width: 10rem;
 }
 
+.album-show-banner{
+    background-color: rgb(34, 34, 34);
+    background-blend-mode: overlay;
+    background-size: cover;
+    display: flex;
+    background-image: url("https://img-s3.onedio.com/id-5cb87bd96aa1b9041e8da3de/rev-0/w-635/listing/f-jpg-webp/s-17c7970dc5d80b11f963f083fbd8a569d872d863.webp");
+}
 
+.album-show-cover{
+    margin: 2rem;
+    border: solid rgb(177, 177, 177);
+    margin-right: 1rem;
+    margin-left: 3rem;
+    height: 319.5px;
+}
+
+.album-show-cover-image{
+    width: 320px;
+}
+
+.album-show-info{
+    margin-top: 3rem;
+}
+
+.album-banner-header{
+    color: #ffff64;
+    margin-bottom: 0.75rem;
+}
+
+.album-show-title{
+    color: white;
+    font-size: 2.25em;
+    line-height: 1.125;
+    font-weight: 700;
+    margin-top: -.2em;
+}
+
+.album-show-artist{
+    margin-top: 0.35rem;
+}
+
+.album-show-artist-link{
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.album-show-release-date{
+    color: #9a9a9a;
+    margin-top: 1.25rem;
+    font-weight: 600;
+}
+
+.album-show-page{
+    background-color: #f7f7f7;
+}
+
+.album-tracks-list{
+    margin-top: 1.5rem;
+}
+
+.album-tracks-list-header{
+    margin-left: 8rem;
+    color: #9a9a9a;
+    font-weight: 900;
+}
+
+.album-show-track-item{
+    display: flex;
+    border-bottom: 0.01rem solid rgb(233, 233, 233);
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 8rem;
+    margin-right: 5rem;
+    transition: background-color 0.1s ease 0s;
+    width: 35rem
+}
+
+.album-show-tracks-bullets{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: 900;
+    color: #9a9a9a;
+}
+
+.album-show-track-title{
+    margin-top: 1rem;
+    letter-spacing: 0;
+    font-size: 1.2rem;
+    font-weight: 900;
+    width: 35%;
+    display: flex;
+    margin-left: 3rem;
+}
+
+.album-show-track-des{
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(154, 154, 154);
+    margin-top: 0.2rem;
+}
+
+.album-show-about{
+    padding: 1rem;
+    background: white;
+    height: fit-content;
+    margin: 1.5rem 5rem;
+}
+
+.album-show-about-header{
+    font-weight: 900;
+}
+
+.album-show-about-body{
+    margin-top: 1rem;
+}
+
+.album-show-contents{
+    display: flex;
+    justify-content: space-between;
+}
+
+.artist-tooltip
+{
+    position: absolute;
+    top: 130px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.artist-tooltip.right
+{
+  margin-left: 3.5rem;
+}
+
+.artist-tooltip.left
+{
+  margin-left: -5px;
+}
+
+.artist-tooltip.top
+{
+  margin-top: -5px;
+}
+
+.artist-tooltip.bottom
+{
+  margin-top: 5px;
+}
+
+.artist-tooltip .tooltip-arrow
+{
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+
+.artist-tooltip.right .tooltip-arrow
+{
+  top: 50%;
+  left: auto;
+  margin-left: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+
+
+
+.artist-tooltip.top .tooltip-arrow
+{
+  top: auto;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+
+.artist-tooltip.left .tooltip-arrow
+{
+  top: 50%;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+  right: -5px;
+  left: auto;
+}
+
+.artist-tooltip.bottom .tooltip-arrow
+{
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+
+.artist-tooltip .tooltip-arrow
+{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-right-color: transparent;
+  border-style: solid;
+}
+
+.artist-tooltip .tooltip-inner
+{
+  max-width: 20rem;
+  padding: 1rem;
+  text-align: center;
+  background: white;
+  border: solid;
+}
+
+.artist-tooltip.on
+{
+  display: block;
+}
+
+.artist-tooltip.off
+{
+  display: none;
+}
+
+.tooltip-content{
+    display: flex;
+}
+
+.tooltip-artist-img{
+    width: 100px;
+    border-radius: 50px;
+}
+
+.tooltip-artist-name{
+    align-self: center;
+    margin-left: 1rem;
+    font-weight: 900;
+}
+
+.footer{
+    background: black;
+    color: white;
+}
+
+.angelist-link-img{
+    width: 35px;
+}
+
+.fb-img{
+    width: 50px;
+    height: 50px;
+}
+
+.lin-img{
+    width: 50px;
+    height: 50px;
+}
+
+.git-img{
+    width: 50px;
+    height: 50px;
+}
+
+.footer-links-container{
+    display: flex;
+    justify-content: center;
+}
+
+.disneyus-about{
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin: 0rem 15rem;
+    padding: 4rem;
+    line-height: normal;
+}
+
+.github-link{
+    margin-left: 2rem;
+}
+
+.angelist-link{
+    margin-left: 2rem;
+}
+
+.facebook-link{
+    margin-left: 1.3rem;
+}
+
+.artists-list-container{
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+    padding-bottom: 5rem;
+    border-top: 0.15rem solid rgb(42, 42, 42);
+    padding-top: 2rem;
+}
+
+.uni-letter-link{
+    color: white;
+    font-weight: 900;
+}
+
+.uni-letter-container{
+    margin-right: 0.5rem;
+}
+
+.all-artists-header{
+    margin-right: 0.5rem;
+    font-weight: 900;
+}
+
+.artists-list-page{
+    height: 100vh;
+    background: black;
+    padding-top: 2rem;
+    padding-left: 5rem;
+    font-weight: 900;
+}
+
+.artists-list-nav{
+    color: #5ba7c2;
+    display: flex;
+}
+
+.artists-list-nav-arrow{
+    color: rgb(154, 154, 154);
+    margin-left: 0.25rem;
+}
+
+.artists-list-letter{
+    margin-left: 0.25rem;
+}
+
+.artists-list-header{
+    color: white;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.artists-list-name-link{
+    color: #5ba7c2;
+}
+
+.artists-list-name-link:hover{
+    color: #a5cfde;
+}
+
+.artists-list-all{
+    margin-top: 1rem
+}
 
