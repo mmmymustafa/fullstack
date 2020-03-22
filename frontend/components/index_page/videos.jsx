@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoPlayer from './video_player'
+import { Link } from 'react-router-dom'
 
 class Videos extends React.Component {
     constructor(props){
@@ -16,7 +17,7 @@ class Videos extends React.Component {
     }
     render() {
         return(
-        <div className="videos">
+        <div id="videos" className="videos">
             <div className="videos-header">VIDEOS</div>
             <div className="main-video-container">
                     <div className="main-video"><iframe width="767" height="431" src="https://www.youtube.com/embed/33XZb3HFGyY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

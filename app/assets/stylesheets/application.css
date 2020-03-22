@@ -243,7 +243,8 @@ a {
 
 .sub-header {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
     background-color: black;
     height: 40px;
 }
@@ -251,10 +252,8 @@ a {
 .sub-path {
     color: white;
     border-left: 1px solid rgb(255, 255, 255);
-    height: 0.875rem;
-    line-height: 1;
-    padding: 0px 10.25rem;
-    margin: 12px;
+    padding: 0rem 1rem;
+    cursor: pointer;
 }
 
 #no-border-sub {
@@ -364,7 +363,7 @@ h1 {
 }
 
 .news{
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-left: 4rem;
     margin-right: 4rem;
 }
@@ -1706,4 +1705,45 @@ border: solid;
     filter: invert(1);
     width: 85px;
 }
+
+.sub-path.social-links{
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.lin-img-sub{
+    width: 17.5px;
+    height: 17.5px;
+}
+
+.github-link-sub{
+    margin-left: 1rem;
+    margin-top: 0.1rem;
+}
+.git-img-sub{
+    width: 17.5px;
+    height: 17.5px;
+}
+
+.angelist-link-sub{
+    margin-left: 1rem;
+    margin-top: 0.1rem;
+}
+
+.angel-img-sub{
+    width: 12px;
+}
+
+.facebook-link-sub{
+    margin-top: 0.1rem;
+    margin-left: 0.7rem;
+}
+
+.fb-img-sub{
+    width: 17.5px;
+    height: 17.5px;
+}
+
+
 
