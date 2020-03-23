@@ -202,7 +202,8 @@ a {
     height: 160px;
 }
 
-.search-bar {
+.search-bar-input {
+    height: 2rem;
     margin-left: 0.5rem;
     -webkit-box-flex: 1;
     flex-grow: 1;
@@ -238,7 +239,7 @@ a {
 }
 
 .search-button {
-    display: contents;
+    margin-bottom: auto
 }
 
 .sub-header {
@@ -1744,6 +1745,125 @@ border: solid;
     width: 17.5px;
     height: 17.5px;
 }
+
+.search-dropdown-img{
+    width: 29px
+}
+
+.search-dropdown-container{
+    margin-top: 0.1rem;
+    background: rgb(255, 255, 255);
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+}
+
+.filter-dropdown{
+    z-index: 3;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+    max-height: calc((100vh - 41px) - 4.5rem);
+    overflow: hidden;
+}
+
+.search-dropdown{
+    margin-left: 1rem;
+    margin-top: 2rem;
+    z-index: 3;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+    max-height: calc((100vh - 41px) - 4.5rem);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.dropdown-item.first{
+    border: none
+}
+
+.artist-track-link.search{
+    width: 25rem;
+    height: 4.718rem;
+    border-top: solid #f7f7f7;
+}
+
+.search-tracks-header{
+    background: #f7f7f7;
+    font-size: 0.75rem;
+    letter-spacing: normal;
+    font-weight: 900;
+    color: #9a9a9a;
+    padding: 1.313rem 1rem .5rem;
+}
+
+.tooltip-artist-img.search{
+    width: 70px;
+}
+
+.tooltip-artist-photo.search{
+    align-self: center;
+}
+
+.tooltip-content.search{
+    margin-left: 1rem;
+}
+
+.search-artists-header{
+    background: #f7f7f7;
+    font-size: 0.75rem;
+    letter-spacing: normal;
+    font-weight: 900;
+    color: #9a9a9a;
+    padding: 1.313rem 1rem .5rem;
+}
+
+.artist-link.search{
+    display: flex;
+    background: white;
+    width: 25rem;
+    height: 4.718rem;
+    border-top: solid #f7f7f7;
+    padding: 0.5rem 0rem;
+}
+
+.artist-link.search:hover{
+    background-color: #e9e9e9;
+}
+
+.artist-album-cover.search{
+    width: 100px;
+}
+
+.album-search-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25rem;
+}
+
+.album-link-search{
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: normal;
+    width: 112px;
+    margin: 0.4rem;
+    padding: 0.5rem 0.25rem;
+    text-align: center;
+}
+
+.album-link-search:hover{
+    background-color: #e9e9e9;
+}
+
+.material-icons.cancel{
+    font-size: 32px;
+    cursor: pointer;
+}
+
+
 
 
 
