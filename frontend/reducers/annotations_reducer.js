@@ -1,9 +1,11 @@
-import { RECEIVE_ANNOTATION, RECEIVE_ANNOTATION_AND_TRACK } from '../actions/annotation_actions';
+import { RECEIVE_ANNOTATION, RECEIVE_ANNOTATIONS, RECEIVE_ANNOTATION_AND_TRACK } from '../actions/annotation_actions';
 
 const annotationsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState = Object.assign({}, oldState);
     switch (action.type) {
+        case RECEIVE_ANNOTATIONS:
+            return action.payload;
         case RECEIVE_ANNOTATION:
             newState[action.annotation.id] = action.annotation;
             return newState

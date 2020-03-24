@@ -263,7 +263,6 @@ a {
 
 .profile-img {
     width: 35px;
-    margin-top: 0.4rem;
     margin-right: 0.2rem;
     transition: .2s border-bottom;
     cursor: pointer;
@@ -300,10 +299,10 @@ button{
     border-bottom: .1rem solid #ff1464;
 }
 
-.profile-img:hover{
+/* .profile-img:hover{
     color: #000;
     border-bottom: .2rem solid #ff1464;
-}
+} */
 
 .profile-dropdown{
     z-index: 3;
@@ -1607,7 +1606,7 @@ border: solid;
     padding-top: 30vh;
     background: rgba(0,0,0,0.7);
     position: absolute;
-    top: 117rem;
+    top: 116rem;
     right: 0;
     bottom: 0;
     flex-direction: column;
@@ -1615,7 +1614,7 @@ border: solid;
     justify-content: center;
     z-index: 2000;
     width: 100vw;
-    height: 169vh;
+    height: 158vh;
     text-align: center;
 }
 
@@ -1863,6 +1862,49 @@ border: solid;
     cursor: pointer;
 }
 
+.profile-buttons{
+    display: flex;
+    align-items: center;
+}
+
+.disneyus-points-container{
+    margin-right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 3.7rem;
+    white-space: pre;
+    letter-spacing: normal;
+    align-self: baseline;
+    margin-top: 0.75rem;
+    height: 1.8rem;
+    font-family: 'WaltographRegular';
+    font-size: 1.1rem;
+    align-items: baseline;
+    font-weight: 900;
+}
+
+.hover-border{
+    padding: 0.1rem;
+    transition: 0.2s background-color;
+}
+
+.profile-img:hover~.hover-border.img{
+    background-color: #ff1464;
+}
+
+.hover-border.dp{
+    width: 3.5rem;
+    margin-top: 0.3rem;
+}
+
+.disneyus-points-container:hover .hover-border.dp{
+    background-color: #ff1464;
+}
+
+.disneyus-points{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
 
 
 

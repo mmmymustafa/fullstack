@@ -13,6 +13,13 @@ export const fetchAnnotation = id => (
     })
 );
 
+export const fetchAnnotations = () => (
+    $.ajax({
+        method: 'GET',
+        url: `api/annotations/`
+    })
+);
+
 export const updateAnnotation = (annotation) => (
     $.ajax({
         url: `/api/annotations/${annotation.id}`,

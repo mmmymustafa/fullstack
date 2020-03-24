@@ -61,8 +61,7 @@ class Search extends React.Component{
                             searchBody: e.currentTarget.value, 
                             tracks: e.currentTarget.value.length > 0 ? Object.values(this.props.tracks).filter((track) => track.title.includes(capitalize(e.currentTarget.value))) : [],
                             albums: e.currentTarget.value.length > 0 ? Object.values(this.props.albums).filter((album) => album.title.includes(capitalize(e.currentTarget.value))) : [],
-                            artists: e.currentTarget.value.length > 0 ? Object.values(this.props.artists).filter((artist) => artist.name.includes(capitalize(e.currentTarget.value))) : [],
-
+                            artists: e.currentTarget.value.length > 0 ? Object.values(this.props.artists).filter((artist) => artist.name.includes(capitalize(e.currentTarget.value))) : []
                           })
         }
     }

@@ -1,8 +1,19 @@
 import React from 'react';
-// import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { fetchAnnotations } from '../../actions/annotation_actions'
 
+
+const mSTP = (state, ownProps) => {
+    let userAnns = Object.values(state.entities.annotations).filter((ann) => ann.user_id === ownProps.curUserId)
+    return {
+        disneyPoints: userAnns.length * 5
+    }
+}
+
+const mDTP = dispatch => ({
+        fetchAnnotations: () => dispatch(fetchAnnotations())
+})
 
 class ProfileDropdown extends React.Component {
     constructor() {
@@ -12,6 +23,10 @@ class ProfileDropdown extends React.Component {
         this.hideProfileMenu = this.hideProfileMenu.bind(this);
 
     };
+
+    componentDidMount(){
+        this.props.fetchAnnotations()
+    }
 
     showProfileMenu(event) {
         event.preventDefault();
@@ -30,16 +45,20 @@ class ProfileDropdown extends React.Component {
     render() {
         return (
             <div className="dropdown">
-                <div className="profile-button" onClick={this.showProfileMenu}>
-                    <img className="profile-img" src="https://pic.chinesefontdesign.com/uploads/2014/08/2992e388d12934d7082c8527d3f6c9aa.gif" />
+                <div className="profile-buttons">
+                    <div className="disneyus-points-container">
+                        DP: <div className="disneyus-points">{this.props.disneyPoints}</div>
+                        <div className="hover-border dp"></div>
                     </div>
+                    <div className="profile-pic-container" onClick={this.showProfileMenu}>
+                        <img className="profile-img" src="https://pic.chinesefontdesign.com/uploads/2014/08/2992e388d12934d7082c8527d3f6c9aa.gif" />
+                        <div className="hover-border img"></div>
+                    </div>
+                </div>
                 {this.state.displayMenu ? (
                     <ul className="profile-dropdown">
                         <li className="dropdown-header"><p>ACCOUNT</p></li>
-                        <li className="dropdown-item"><Link className="dropdown-item-link" to="/">View Profile</Link></li> {/*add user/:id from backend*/}
-                        <li className="dropdown-item"><Link className="dropdown-item-link" to="/">Report a Problem</Link></li> {/*add report problem link later*/}
-                        <li className="dropdown-item"><div className="logout-button" onClick={this.props.logout}>Sign Out</div></li>
-                        <li className="dropdown-item"><Link className="dropdown-item-link" to="/">Firehose</Link></li> {/*add firehose which is showing all theactivities from all users going on link later*/}
+                        <div className="dropdown-item logout-button" onClick={this.props.logout}>Sign Out</div>
                     </ul>) : null}
             </div>
 
@@ -47,7 +66,7 @@ class ProfileDropdown extends React.Component {
     }
 }
 
-export default ProfileDropdown
+export default connect(mSTP, mDTP)(ProfileDropdown)
 
 // source: https://www.skptricks.com/2018/05/create-dropdown-using-reactjs.html 
 // by Sumit Kumar Pradhan on May 13, 2018 May 13, 2018 in REACT, web development

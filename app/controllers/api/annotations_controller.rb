@@ -1,6 +1,10 @@
 class Api::AnnotationsController < ApplicationController
     before_action :require_logged_in, only: [:create ,:update]
 
+    def index
+        @annotations = Annotation.all
+    end
+
     def create
         @annotation = Annotation.new(params.require(:annotation).permit(:user_id, :track_id, :body, :selected_lyrics))
         @track = Track.find(@annotation.track_id)
