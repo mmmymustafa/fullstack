@@ -778,7 +778,7 @@ h1 {
 .annotation-form{
     float: right;
     margin-right: 7rem;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     padding-left: 2rem;
     border-left: solid;
     padding-bottom: 1rem;
@@ -1871,11 +1871,11 @@ border: solid;
     margin-right: 1rem;
     display: flex;
     flex-wrap: wrap;
-    width: 3.7rem;
+    width: 4.67rem;
     white-space: pre;
     letter-spacing: normal;
     align-self: baseline;
-    margin-top: 0.75rem;
+    margin-top: 0.25rem;
     height: 1.8rem;
     font-family: 'WaltographRegular';
     font-size: 1.1rem;
@@ -1893,8 +1893,8 @@ border: solid;
 }
 
 .hover-border.dp{
-    width: 3.5rem;
-    margin-top: 0.3rem;
+    width: 4.3rem;
+    margin-top: 0.05rem;
 }
 
 .disneyus-points-container:hover .hover-border.dp{
@@ -1906,6 +1906,33 @@ border: solid;
     font-size: 1rem;
 }
 
+.disneyus-points-text{
+    display: flex;
+    align-items: baseline;
+    border: solid;
+    padding: 0.2rem;
+}
+
+.delete-anno-button{
+    margin-left: 1rem;
+    padding: 0.25rem;
+    border: solid;
+    letter-spacing: normal;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #ff1414;
+    transition: 0.3s background-color;
+    cursor: pointer;
+}
+
+.delete-anno-button:hover{
+    background-color: rgba(255,20,20,0.2);
+}
+
+.anno-user-buttons{
+    display: flex;
+    align-items: center;
+}
 
 
 

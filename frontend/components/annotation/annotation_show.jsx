@@ -4,6 +4,7 @@ import EditAnnotationForm from '../annotation/edit_annotation_form_container'
 import AnnotationCommentFormContainer from '../comments/annotation_create_comment_form_container';
 import AnnotationCommentShowContainer from '../comments/annotation_comment_show_container';
 import UpvoteShowContainer from '../upvote/upvote_container'
+import Lyrics from '../track/lyrics';
 
 
 
@@ -18,6 +19,7 @@ class AnnotationShow extends React.Component {
         this.toggleEditForm = this.toggleEditForm.bind(this)
         this.showAnnotationInfo = this.showAnnotationInfo.bind(this)
         this.toggleAnnotationInfo = this.toggleAnnotationInfo.bind(this)
+        this.handleDeleteAnnotation = this.handleDeleteAnnotation.bind(this)
     }
 
     componentDidMount(){
@@ -34,7 +36,23 @@ class AnnotationShow extends React.Component {
         this.setState({showComponent: !this.state.showComponent})
     }
 
-    
+    handleDeleteAnnotation(annBody){
+        this.props.destroyAnnotation(this.props.annotation.id)
+         .then(() => {
+                let divs = document.getElementsByClassName("yinw");
+                let searchText = annBody;
+                let found;
+
+                for (let i = 0; i < divs.length; i++) {
+                    if (divs[i].textContent === searchText) {
+                        found = i;
+                        break;
+                    }
+                }
+                divs[found].setAttribute("style", "background-color: transparent; cursor: text;")
+            }
+         )
+    }
     
     toggleEditForm() {
         this.setState({
@@ -59,8 +77,11 @@ class AnnotationShow extends React.Component {
                 <p className="annotation-body">{this.props.annotation.body}</p>
                 <UpvoteShowContainer votes={this.props.upvotes} voteableId={this.props.annotation.id} voteableType="Annotation" userId={this.props.curUserId}/>
                 {this.props.curUserId === this.props.annotation.user_id ?
-                            <div className="annotation-author-suugestions"> 
+                            <div className="annotation-author-suugestions">
+                            <div className="anno-user-buttons"> 
                             <span className="aeb"><button onClick={this.handleEdit} className="annotation-edit-button">Edit</button></span>
+                                    <div className="delete-anno-button" onClick={() => this.handleDeleteAnnotation(this.props.annotation.selected_lyrics)}>Delete</div>
+                            </div>
                                 {this.props.comments.length > 0 ? <div className="annotation-suggestions-show">
                                     <div className="suggestions-header">Disneyus community suggestions:</div>
                         <div className="annotation-comments">

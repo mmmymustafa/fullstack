@@ -20,6 +20,14 @@ export const fetchAnnotations = () => (
     })
 );
 
+
+export const destroyAnnotation = (id) => (
+    $.ajax({
+        url: `/api/annotations/${id}`,
+        method: 'DELETE',
+    })
+)
+
 export const updateAnnotation = (annotation) => (
     $.ajax({
         url: `/api/annotations/${annotation.id}`,

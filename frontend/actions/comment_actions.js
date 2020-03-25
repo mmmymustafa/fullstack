@@ -14,8 +14,9 @@ const receiveComment = payload => ({
     payload
 })
 
-const removeComment = () => ({
+const removeComment = payload => ({
     type: REMOVE_COMMENT,
+    payload
 })
 
 export const fetchAnnotationComments = annotationId => dispatch => {
@@ -80,16 +81,16 @@ export const updateAlbumComment = comment => dispatch => {
 
 export const destroyAnnotationComment = comment => dispatch => {
     return CommentApiUtil.destroyAnnotationComment(comment)
-        .then(() => dispatch(removeComment()))
+        .then((payload) => dispatch(removeComment(payload)))
 }
 
 export const destroyTrackComment = comment => dispatch => {
     return CommentApiUtil.destroyTrackComment(comment)
-        .then(() => dispatch(removeComment()))
+        .then((payload) => dispatch(removeComment(payload)))
 }
 
 export const destroyAlbumComment = comment => dispatch => {
     return CommentApiUtil.destroyAlbumComment(comment)
-        .then(() => dispatch(removeComment()))
+        .then((payload) => dispatch(removeComment(payload)))
 }
 

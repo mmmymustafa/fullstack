@@ -47,7 +47,7 @@ class ProfileDropdown extends React.Component {
             <div className="dropdown">
                 <div className="profile-buttons">
                     <div className="disneyus-points-container">
-                        DP: <div className="disneyus-points">{this.props.disneyPoints}</div>
+                        <div className="disneyus-points-text">DP: <div className="disneyus-points">{this.props.disneyPoints}</div></div>
                         <div className="hover-border dp"></div>
                     </div>
                     <div className="profile-pic-container" onClick={this.showProfileMenu}>

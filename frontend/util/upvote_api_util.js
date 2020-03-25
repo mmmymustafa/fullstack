@@ -26,6 +26,7 @@ export const destroyUpvote = (id) => (
         method: 'DELETE',
     })
 )
+
 export const fetchUpvote = (id) => (
     $.ajax({
         url: `/api/upvotes/${id}`,

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import AnnotationShow from './annotation_show';
 import { fetchAnnotationComment } from '../../actions/comment_actions';
 import { fetchUpvotes, fetchUpvote } from '../../actions/upvotes_actions';
+import { destroyAnnotation } from '../../actions/annotation_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -20,7 +21,8 @@ const mDTP = dispatch => {
     return{
         fetchAnnotationComment: (annotationId, commId) => dispatch(fetchAnnotationComment(annotationId, commId)),
         fetchUpvotes: () => dispatch(fetchUpvotes()),
-        fetchUpvote: (voteId) => dispatch(fetchUpvote(voteId))
+        fetchUpvote: (voteId) => dispatch(fetchUpvote(voteId)),
+        destroyAnnotation: (annotationId) => dispatch(destroyAnnotation(annotationId))
     }
 }
 

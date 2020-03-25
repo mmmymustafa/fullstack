@@ -37,7 +37,7 @@ class AnnotationForm extends React.Component {
 
     render() {
         return (
-            <div className="annotation-form">
+            <div className="annotation-form" >
                 <form onSubmit={this.handleSubmit}>
                     <div className="annotation-form-body">
                     <textarea

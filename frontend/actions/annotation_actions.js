@@ -3,6 +3,8 @@ import * as AnnotationApiUtil from '../util/annotation_api_util';
 export const RECEIVE_ANNOTATION = 'RECEIVE_ANNOTATION';
 export const RECEIVE_ANNOTATIONS = 'RECEIVE_ANNOTATIONS';
 export const RECEIVE_ANNOTATION_AND_TRACK = 'RECEIVE_ANNOTATION_AND_TRACK';
+export const REMOVE_ANNOTATION = 'REMOVE_ANNOTATION';
+
 
 const receiveAnnotation = annotation => ({
     type: RECEIVE_ANNOTATION,
@@ -16,6 +18,11 @@ const receiveAnnotationAndTrack = payload => ({
 
 const receiveAnnotations = payload => ({
     type: RECEIVE_ANNOTATIONS,
+    payload
+})
+
+const deleteAnnotation = payload => ({
+    type: REMOVE_ANNOTATION,
     payload
 })
 
@@ -37,4 +44,9 @@ export const createAnnotation = (annotation) => dispatch => {
 export const updateAnnotation = (annotation) => dispatch => {
     return AnnotationApiUtil.updateAnnotation(annotation)
         .then(annotation => dispatch(receiveAnnotation(annotation)));
+}
+
+export const destroyAnnotation = (annotation) => dispatch => {
+    return AnnotationApiUtil.destroyAnnotation(annotation)
+        .then(payload => dispatch(deleteAnnotation(payload)));
 }

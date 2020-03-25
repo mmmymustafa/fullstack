@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :tracks, only: [:index ,:show] do
       resources :comments, only: [:create, :index, :show, :update, :destroy]
     end
-    resources :annotations, only: [:index, :create, :update, :show] do
+    resources :annotations, only: [:index, :create, :update, :show, :destroy] do
       resources :comments, only: [:create, :index, :show, :update, :destroy]
     end
     resources :upvotes, only: [:create, :index, :show, :update, :destroy]

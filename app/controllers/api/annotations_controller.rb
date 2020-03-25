@@ -29,4 +29,10 @@ class Api::AnnotationsController < ApplicationController
             render json: @annotation.errors.full_messages, status: 422
         end
     end
+
+        def destroy
+        @annotation = Annotation.find(params[:id])
+        @annotation.destroy
+        render 'api/annotations/show'
+    end
 end

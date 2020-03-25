@@ -10,7 +10,8 @@ const commentsReducer = (oldState = {}, action) => {
         case RECEIVE_COMMENTS:
             return action.payload
         case REMOVE_COMMENT:
-            return oldState
+            delete newState[action.payload.id];
+            return newState
         default:
             return oldState;
     }
