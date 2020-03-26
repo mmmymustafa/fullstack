@@ -129,7 +129,10 @@ class Lyrics extends React.Component{
                 <div hidden className="track-lyrics-body"><pre>{this.props.track.lyrics}</pre></div>
                 <pre><div onMouseUp={this.onHighlight} dangerouslySetInnerHTML={renderLyrics()} className="track-lyrics-body"></div></pre>
                 {this.state.showComponent && this.props.curUserId ?
-                    <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> :
+                    selected.length > 6 ? <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> : 
+                    <div className="outer-not-signed-creating-anno">
+                        <div className="not-signed-creating-anno" >Highlighted lyrics must have a minimum 7 characters to annotate!</div>
+                    </div> :
                     null
                 } 
                 {this.state.showComponent && !this.props.curUserId ?
