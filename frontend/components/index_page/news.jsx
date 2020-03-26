@@ -4,7 +4,7 @@ class News extends React.Component{
     render(){
         return(
         <div className="news">
-        <a href="https://www.fool.com/investing/2020/01/09/disney-lucasfilm-refocus-on-creativity-not-fans.aspx">
+        <a target="_blank" href="https://www.fool.com/investing/2020/01/09/disney-lucasfilm-refocus-on-creativity-not-fans.aspx">
           <div className="main-news">
             <div className="main-news-headers">
                 <p className="main-news-label"><span>NEWS</span></p>
@@ -23,7 +23,7 @@ class News extends React.Component{
         <div className="other-news">
             <ul className="other-news-list">
                 <li>
-                            <a href="https://www.marketwatch.com/story/have-these-people-gone-crazy-for-mickey-mouse-10000-people-applied-for-unpaid-jobs-at-disney-2020-01-09">
+                            <a target="_blank" href="https://www.marketwatch.com/story/have-these-people-gone-crazy-for-mickey-mouse-10000-people-applied-for-unpaid-jobs-at-disney-2020-01-09">
                             <div className="other-news-headers">
                                 <p className="other-news-label"><span>NEWS</span></p>
                                     <h2 className="other-news-header">10,000 people applied for 14 unpaid jobs at Disney</h2>
@@ -39,7 +39,7 @@ class News extends React.Component{
                 </li>
                 <li className="other-news-item">
                         <div className="other-news-content">
-                                <a href="https://nypost.com/2020/01/10/columbia-releases-mickey-mouse-collection-featuring-original-artwork-of-the-disney-icon/">
+                                <a target="_blank" href="https://nypost.com/2020/01/10/columbia-releases-mickey-mouse-collection-featuring-original-artwork-of-the-disney-icon/">
                             <div className="other-news-headers">
                                     <p className="other-news-label"><span>NEWS</span></p>
                                         <h2 className="other-news-header">Columbia releases Mickey Mouse collection featuring original artwork of Disney icon</h2>
@@ -56,7 +56,7 @@ class News extends React.Component{
                 </li>
                 <li className="other-news-item" >
                         <div className="other-news-content">
-                            <a href="https://comicbook.com/tv-shows/2020/01/10/disney-fox-deal-killed-one-of-fxs-most-promising-new-series/">
+                            <a target="_blank" href="https://comicbook.com/tv-shows/2020/01/10/disney-fox-deal-killed-one-of-fxs-most-promising-new-series/">
                             <div className="other-news-headers">
                                     <p className="other-news-label"><span>NEWS</span></p>
                                         <h2 className="other-news-header">Disney-Fox Deal May Have Just Killed One of FX's Most Promising New Series</h2>
@@ -73,7 +73,7 @@ class News extends React.Component{
                 </li>
                 <li className="other-news-item">
                      <div className="other-news-content">
-                        <a href="https://people.com/home/disney-princess-dinnerware-set/">
+                          <a target="_blank" href="https://people.com/home/disney-princess-dinnerware-set/">
                             <div className="other-news-headers">
                                     <p className="other-news-label"><span>NEWS</span></p>
                                         <h2 className="other-news-header">This Disney Princess Dinnerware Set Is All Over Instagram — and Selling Out Fast</h2>

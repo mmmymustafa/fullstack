@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import UpvoteShowContainer from '../upvote/upvote_container'
 import { connect } from 'react-redux';
 import { fetchUpvotes, fetchUpvote } from '../../actions/upvotes_actions';
+import { destroyTrackComment } from '../../actions/comment_actions';
 
 
 const mSTP = (state, ownProps) => {
@@ -18,7 +19,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchUpvote: (voteId) => dispatch(fetchUpvote(voteId)),
-        fetchUpvotes: () => dispatch(fetchUpvotes())
+        fetchUpvotes: () => dispatch(fetchUpvotes()),
+        destroyTrackComment: (commentId) => dispatch(destroyTrackComment(commentId))
     }
 }
 
@@ -26,8 +28,10 @@ class TrackCommentItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            showDelete: false
         }
         this.timeSince = this.timeSince.bind(this)
+        this.toggleDeleteOption = this.toggleDeleteOption.bind(this)
     }
 
     // componentDidMount() {
@@ -62,6 +66,10 @@ class TrackCommentItem extends React.Component {
         return Math.floor(seconds) + " seconds ago";
     }
 
+    toggleDeleteOption(){
+        this.setState({showDelete: !this.state.showDelete})
+    }
+
     render() {
         return (
                 <div className="comment-show">
@@ -70,7 +78,10 @@ class TrackCommentItem extends React.Component {
                         <div className="comment-time-ago">{this.timeSince(Date.parse(this.props.comment.created_at))}</div>
                     </div>
                     <div className="comment-body">{this.props.comment.body}</div>
-                    <UpvoteShowContainer votes={this.props.upvotes} voteableId={this.props.comment.id} voteableType="Comment" userId={this.props.curUserId} />
+                    <div className="comment-upvotes-container">
+                        <UpvoteShowContainer votes={this.props.upvotes} voteableId={this.props.comment.id} voteableType="Comment" userId={this.props.curUserId} />
+                        {this.props.curUserId === this.props.comment.user_id ? <div onClick={() => this.props.destroyTrackComment(this.props.comment)} className="delete-com-butt"><span>...</span></div> : null}
+                    </div>
                 </div>
         )
 

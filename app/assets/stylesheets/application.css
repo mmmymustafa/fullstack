@@ -551,6 +551,7 @@ h1 {
 }
 
 .track-page{
+    padding-bottom: 5rem;
     background-color: white;
 }
 
@@ -579,6 +580,7 @@ h1 {
 
 .artist-page{
     background: #f7f7f7;
+    padding-bottom: 5rem;
 }
 
 .artist-body{
@@ -904,6 +906,10 @@ h1 {
     border-color: #99a7ee;
 }
 
+.annotation-author-suugestions{
+    margin-top: 1rem;
+}
+
 .anno-link:hover{
     color: #99a7ee;
 }
@@ -1080,6 +1086,7 @@ border: solid;
     background-color: rgba(204,204,204,.2);
     padding: 1rem;
     margin-left: -.9rem;
+    margin-top: 1rem;
 }
 
 .annotation-comment-textarea{
@@ -1128,7 +1135,6 @@ border: solid;
 
 .voting-thumbs{
     display: flex;
-    margin-bottom: 1.5rem;
 }
 
 .upvote-thumb{
@@ -1233,6 +1239,7 @@ border: solid;
 
 .album-show-page{
     background-color: #f7f7f7;
+    padding-bottom: 5rem;
 }
 
 .album-tracks-list{
@@ -1869,9 +1876,7 @@ border: solid;
 
 .disneyus-points-container{
     margin-right: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    width: 4.67rem;
+    width: fit-content;
     white-space: pre;
     letter-spacing: normal;
     align-self: baseline;
@@ -1893,7 +1898,7 @@ border: solid;
 }
 
 .hover-border.dp{
-    width: 4.3rem;
+    width: 95.5%;    
     margin-top: 0.05rem;
 }
 
@@ -1932,6 +1937,26 @@ border: solid;
 .anno-user-buttons{
     display: flex;
     align-items: center;
+}
+
+.comment-upvotes-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.delete-com-butt:hover::before{
+    content: "Delete";
+    border: solid;
+    padding: 0.1rem 0.2rem;
+    background-color: rgba(255,20,20,0.2);
+    cursor: pointer;
+    color: #ff1414;
+}
+
+.delete-com-butt:hover span{
+    display: none;
 }
 
 

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import UpvoteShowContainer from '../upvote/upvote_container'
 import { connect } from 'react-redux';
 import { fetchUpvotes, fetchUpvote } from '../../actions/upvotes_actions';
+import { destroyAlbumComment} from '../../actions/comment_actions';
+
 
 
 const mSTP = (state, ownProps) => {
@@ -18,7 +20,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchUpvote: (voteId) => dispatch(fetchUpvote(voteId)),
-        fetchUpvotes: () => dispatch(fetchUpvotes())
+        fetchUpvotes: () => dispatch(fetchUpvotes()),
+        destroyAlbumComment: (commentId) => dispatch(destroyAlbumComment(commentId))
     }
 }
 
@@ -70,7 +73,10 @@ class AlbumCommentItem extends React.Component {
                     <div className="comment-time-ago">{this.timeSince(Date.parse(this.props.comment.created_at))}</div>
                 </div>
                 <div className="comment-body">{this.props.comment.body}</div>
-                <UpvoteShowContainer votes={this.props.upvotes} voteableId={this.props.comment.id} voteableType="Comment" userId={this.props.curUserId} />
+                <div className="comment-upvotes-container">
+                    <UpvoteShowContainer votes={this.props.upvotes} voteableId={this.props.comment.id} voteableType="Comment" userId={this.props.curUserId} />
+                    {this.props.curUserId === this.props.comment.user_id ? <div onClick={() => this.props.destroyAlbumComment(this.props.comment)} className="delete-com-butt"><span>...</span></div> : null}
+                </div>
             </div>
         )
 

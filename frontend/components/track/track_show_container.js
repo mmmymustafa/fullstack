@@ -9,7 +9,7 @@ import { selectTrack,
         selectTracksArtist, 
         selectTracksAnnotations } from '../../reducers/selectors';
 import { fetchAnnotation } from '../../actions/annotation_actions';
-import { fetchTrackComment } from '../../actions/comment_actions';
+import { fetchTrackComment, fetchTrackComments } from '../../actions/comment_actions';
 import { fetchUpvotes } from '../../actions/upvotes_actions'
 
 const mSTP = (state, ownProps) => {
@@ -34,7 +34,7 @@ const mDTP = dispatch => ({
     fetchArtist: artistId => dispatch(fetchArtist(artistId)),
     fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
     fetchAnnotation: annotationId => dispatch(fetchAnnotation(annotationId)),
-    fetchTrackComment: (trackId, commId) => dispatch(fetchTrackComment(trackId, commId)),
+    fetchTrackComments: (trackId) => dispatch(fetchTrackComments(trackId)),
     fetchUpvotes: () => dispatch(fetchUpvotes())
 })
 
