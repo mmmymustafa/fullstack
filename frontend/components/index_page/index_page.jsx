@@ -1,6 +1,6 @@
 import React from 'react';
 import News from './news';
-import ChartsContainer from './charts_container';
+import ChartsContainer from './charts';
 import Videos from './videos'
 
 class IndexPage extends React.Component {

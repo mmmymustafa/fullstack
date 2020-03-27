@@ -10,10 +10,12 @@ import { selectAllTracks , selectAllAlbums, selectAllArtists} from '../../reduce
 
 const mSTP = (state, ownProps) => {
     const tracks = selectAllTracks(state);
+    const trendingTracks = selectAllTracks(state).slice(0,10);
     const artists = selectAllArtists(state);
     return {
         tracks,
-        artists
+        artists,
+        trendingTracks
     }
 }
 

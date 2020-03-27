@@ -130,13 +130,13 @@ class Lyrics extends React.Component{
                 <pre><div onMouseUp={this.onHighlight} dangerouslySetInnerHTML={renderLyrics()} className="track-lyrics-body"></div></pre>
                 {this.state.showComponent && this.props.curUserId ?
                     selected.length > 6 ? <CreateAnnotationFormContainer trackId={this.props.trackId} selectedLyrics={selected} toggleAnnotationForm={this.toggleAnnotationForm} /> : 
-                    <div className="outer-not-signed-creating-anno">
+                        <div className="outer-not-signed-creating-anno" style={{ marginTop: `${window.scrollY + document.getSelection().getRangeAt(0).getBoundingClientRect().top - 460}px` }}>
                         <div className="not-signed-creating-anno" >Highlighted lyrics must have a minimum 7 characters to annotate!</div>
                     </div> :
                     null
                 } 
                 {this.state.showComponent && !this.props.curUserId ?
-                    <div className="outer-not-signed-creating-anno">
+                    <div style={{ marginTop: `${window.scrollY + document.getSelection().getRangeAt(0).getBoundingClientRect().top - 460}px` }} className="outer-not-signed-creating-anno">
                         <div className="not-signed-creating-anno">
                             <Link className="anno-link" to="/signup">Sign up </Link>
                             or  
