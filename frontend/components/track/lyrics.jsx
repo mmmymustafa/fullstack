@@ -19,12 +19,6 @@ class Lyrics extends React.Component{
         this.toggleShowAnnotation = this.toggleShowAnnotation.bind(this)
     }
 
-    // componentDidUpdate(prevProps){
-    //     if(prevProps.annotations !== this.props.annotations){
-    //         console.log("they ain\'t the same breh")
-    //     }
-    // }
-
     toggleAnnotationForm(){
         this.setState({
             showComponent: !this.state.showComponent
@@ -65,6 +59,10 @@ class Lyrics extends React.Component{
                     showComponent: true,
                     showAnnotation: false,
                 })
+            } else {
+                this.setState({
+                    showComponent: false,
+                }) 
             }
         }
     }
