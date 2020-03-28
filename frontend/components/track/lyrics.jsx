@@ -35,7 +35,6 @@ class Lyrics extends React.Component{
         if (document.getElementsByClassName("yinw").length > 0){
             for (let i = 0; i < document.getElementsByClassName("yinw").length; i++){
                 if (document.getSelection().toString() !== "" && !document.getSelection().containsNode(document.getElementsByClassName("yinw")[i], true)){
-                console.log(document.getSelection().toString())    
                 this.setState({
                     showComponent: true,
                     showAnnotation: false,
@@ -45,7 +44,6 @@ class Lyrics extends React.Component{
                         annotated[i].setAttribute("style", "background-color: #e9e9e9;")
                     }
                 } else {
-                console.log("hitting")    
                     this.setState({
                     showComponent: false,
                     }) 
@@ -54,7 +52,6 @@ class Lyrics extends React.Component{
             }
         } else {
             if (document.getSelection().toString() !== "") {
-                console.log(document.getSelection().toString())
                 this.setState({
                     showComponent: true,
                     showAnnotation: false,
@@ -73,16 +70,13 @@ class Lyrics extends React.Component{
             if (annotated[i]) {
                 annotated[i].onclick = () => {
                     this.setState({ curAnnotation: this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[i].innerText)]].id, showAnnotation: !this.state.showAnnotation})
-                    console.log(this.state.curAnnotation)
                     for (let j = 0; j < annotated.length; j++) {
                         if (this.state.curAnnotation === this.props.annotations[this.props.track.annotationIds[this.props.track.annotated_lyrics.indexOf(document.getElementsByClassName("yinw")[j].innerText)]].id && this.state.showAnnotation === true){
                             annotated[j].setAttribute("style", "background-color: #ffff64;")
                             annotated[j].onmouseenter = () => (null)
                             annotated[j].onmouseleave = () => (null)
-                            // document.getElementsByClassName("annotation-comments")[0].setAttribute("style", `margin-top: ${annotated[i].offsetTop - 32}px`)
                             document.getElementsByClassName("annotation")[0].setAttribute("style", `top: ${annotated[i].offsetTop}px`)
                             document.getElementsByClassName("arrow-left")[0].setAttribute("style", `margin-top: ${annotated[i].offsetTop + 32}px`)
-                            // document.getElementsByClassName("annotation-comments")[0].setAttribute("style", `top: ${annotated[i].offsetTop + 10}px`)
                         } else {
                             annotated[j].setAttribute("style", "background-color: #e9e9e9;")
                             annotated[j].onmouseenter = () => (annotated[j].setAttribute("style", "background-color: #ffff64;"))
@@ -96,7 +90,6 @@ class Lyrics extends React.Component{
        
     gText(){
     let t = '';
-    t = console.log(document.getSelection().toString());
     document.getElementsByClassName('track-lyrics-body').value = t;
     }
 
@@ -108,7 +101,6 @@ class Lyrics extends React.Component{
             selected = document.getSelection().toString()
             _selected == new RegExp(`/${selected}/gi`)
         } 
-        console.log(selected)
         if (this.props.track.lyrics === undefined) return null;
         const renderLyrics = () => {
             let foundAnnotation = this.props.track.lyrics;

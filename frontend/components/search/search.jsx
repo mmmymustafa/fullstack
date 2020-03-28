@@ -35,6 +35,7 @@ class Search extends React.Component{
         this.toggleSearchDropdown = this.toggleSearchDropdown.bind(this)
         this.update = this.update.bind(this)
         this.resetSB = this.resetSB.bind(this)
+        this.lisa = this.lisa.bind(this)
     }
 
     componentDidMount(){
@@ -70,7 +71,14 @@ class Search extends React.Component{
         this.setState({showDropdown: !this.state.showDropdown})
     }
 
+    lisa(){
+        if (this.state.searchBody === "204863"){
+            (window.location.href = "https://www.youtube.com/embed/84rcDyvadT4?autoplay=1&start=227&fs=0")
+        }
+    }
+
     render(){
+        this.lisa()
         return(
             <div className="search-bar">
                     <div className="search-bar-container">   
