@@ -1993,3 +1993,12 @@ border: solid;
     display: flex;
     justify-content: space-evenly;
 }
+
+.index-page-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.index-videos-container{
+    background: black;
+}

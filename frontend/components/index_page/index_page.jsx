@@ -14,9 +14,9 @@ class IndexPage extends React.Component {
                         <ChartsContainer />
                     </div>
                 </div >
-                <div>
-                    <div>
-                    <Videos />
+                <div className="index-page-container index-videos-container">
+                    <div className="index-page">
+                        <Videos />
                     </div>
                 </div>
             </div >
