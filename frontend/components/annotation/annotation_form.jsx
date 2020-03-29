@@ -36,8 +36,9 @@ class AnnotationForm extends React.Component {
     }
 
     render() {
+        const pos = window.scrollY + document.getSelection().getRangeAt(0).getBoundingClientRect().top - 500
         return (
-            <div className="annotation-form" style={{marginTop: `${window.scrollY + document.getSelection().getRangeAt(0).getBoundingClientRect().top - 500}px`}}>
+            <div className="annotation-form" style={{ marginTop: `${document.getSelection().toString().length > 0 ? pos : null}px`}}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="annotation-form-body">
                     <textarea
