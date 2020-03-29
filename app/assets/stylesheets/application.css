@@ -1988,3 +1988,8 @@ border: solid;
 .index-page{
     width: 1280px;
 }
+
+.index-page-container{
+    display: flex;
+    justify-content: space-evenly;
+}
