@@ -440,6 +440,7 @@ h1 {
     margin-right: 2rem;
     font-size: 30px;
     font-weight: 500;
+    height: 22.4rem;
 }
 
 .other-news-label{
@@ -459,28 +460,24 @@ h1 {
     margin-right: 2rem;
     font-size: 0.75rem;
     letter-spacing: 0.3px;
-    margin-top: 14.2rem;
 }
 
 .other-page-author-2{
     margin-right: 2rem;
     font-size: 0.75rem;
     letter-spacing: 0.3px;
-    margin-top: 5.9rem;
 }
 
 .other-page-author-3{
     margin-right: 2rem;
     font-size: 0.75rem;
-    letter-spacing: 0.3px;
-    margin-top: 10rem;
+    letter-spacing: 0.3px; 
 }
 
 .other-page-author-4{
     margin-right: 2rem;
     font-size: 0.75rem;
     letter-spacing: 0.3px;
-    margin-top: 8rem;
 }
 
 .track-album-cover{
@@ -659,17 +656,16 @@ h1 {
 
 .charts-headers{
     margin-top: 5rem;
+    text-align: center;
 }
 
 .charts-header-title{
-    margin-left: 30rem;
     font-size: 5rem;
     font-weight: 900;
     font-family: 'WaltographRegular';
 }
 
 .charts-header-sub{
-    margin-left: 33.5rem;
     margin-top: 1.5rem;
     font-size: 0.875rem;
     font-weight: 900;
@@ -855,7 +851,7 @@ h1 {
     border: #0ecb27;
     border-style: solid;
     cursor: pointer;
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.5rem;
     color: #0ecb27;
     transition: background-color .3s,border-color .3s;
 }
@@ -1987,4 +1983,9 @@ border: solid;
 .charts-load-container{
     display: flex;
     justify-content: center;
+}
+
+.index-page{
+    width: 1280px;
+    align-items: center;
 }
