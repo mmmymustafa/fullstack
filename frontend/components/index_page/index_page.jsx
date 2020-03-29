@@ -7,11 +7,13 @@ class IndexPage extends React.Component {
 
     render(){
         return(
-            <div className="index-page">
-                <News />
-                <ChartsContainer />
-                <Videos />
-            </div>
+            <div>
+                <div className="index-page">
+                    <News />
+                    <ChartsContainer />
+                    <Videos />
+                </div>
+            </div >
         )   
     }
 
