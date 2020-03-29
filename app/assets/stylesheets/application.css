@@ -253,8 +253,9 @@ a {
 .sub-path {
     color: white;
     border-left: 1px solid rgb(255, 255, 255);
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     cursor: pointer;
+    font-weight: 900;
 }
 
 #no-border-sub {
@@ -1613,7 +1614,6 @@ border: solid;
     padding-top: 30vh;
     background: rgba(0,0,0,0.7);
     position: absolute;
-    top: 116rem;
     right: 0;
     bottom: 0;
     flex-direction: column;
@@ -1714,7 +1714,7 @@ border: solid;
 }
 
 .sub-path.social-links{
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     display: flex;
     align-items: center;
 }

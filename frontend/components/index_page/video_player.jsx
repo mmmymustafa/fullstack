@@ -14,7 +14,7 @@ class VideoPlayer extends React.Component {
     render(){
         return(
             this.state.showVideoPlayer ? 
-            <div className="video-player-container">
+                <div className="video-player-container" style={{ top: `${window.scrollY + document.querySelector('#videos').getBoundingClientRect().top}px`}}>
                 <div className="video-player-close-button" onClick={this.handleCloseButton}>x</div>
                 <div className="video-player">
                     <iframe width="767" height="431" src={`${this.props.videoUrl}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
