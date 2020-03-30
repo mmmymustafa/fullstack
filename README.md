@@ -14,3 +14,11 @@
   - Users can highlight a piece of lyrics and annotate the meaning behind it with the highlighted lyrics must be minimum of 7 letters to be annotated after being logged in.
   - Comment section available in each track for users too comment about the track.
   ![alt-text](https://github.com/mmmymustafa/fullstack/blob/master/readme_gifs/ezgif-6-2997e8715a68.gif)
+
+  2. Annotations
+  - Annotation form and annotation show components appears dynalmically in the page depending on the position of the highlighted lyrics in the track by setting the style in the prop of the div contatining the component dynamilcally
+```javascript
+const pos = window.scrollY + document.getSelection().getRangeAt(0).getBoundingClientRect().top - 500
+<div className="annotation-form" style={{ marginTop: `${document.getSelection().toString().length > 0 ? pos : null}px`}}>
+```
+  ![alt-text](https://github.com/mmmymustafa/fullstack/blob/master/readme_gifs/ezgif-6-cb95d3231c8f.gif)
