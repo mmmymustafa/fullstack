@@ -35,7 +35,7 @@
     }
   ```
   - Search bar goes through track, albums and artists to find a word that begins with the matching input characters and show only the needed data (for example: if non of the albums matches the characters then albums won't show only tracks and artists)
-      ![alt-text](https://github.com/mmmymustafa/fullstack/blob/master/readme_gifs/ezgif-6-3793a3027596.gif)
+  - ![alt-text](https://github.com/mmmymustafa/fullstack/blob/master/readme_gifs/ezgif-6-3793a3027596.gif)
   
 ## 4. Tracks
   - Users can highlight a piece of lyrics and annotate the meaning behind it with the highlighted lyrics must be minimum of 7 letters to be annotated after being logged in.
@@ -72,6 +72,33 @@ const pos = window.scrollY + document.getSelection().getRangeAt(0).getBoundingCl
   - [ ] Embed spotify track samples
   - [ ] Extend charting for artists and albums
   - [ ] Charts to have filtering and ordering system
+
+# Technologies Information
+
+Ruby version:
+ - ruby 2.5.1
+ - rails 5.2.3
+
+Dependencies: 
+ - "@babel/core": "^7.7.7"
+ - "@babel/preset-env": "^7.7.7"
+ - "@babel/preset-react": "^7.7.4"
+ - "babel-loader": "^8.0.6"
+ - "material-design-icons": "^3.0.1"
+ - "react": "^16.12.0"
+ - "react-dom": "^16.12.0"
+ - "react-redux": "^7.1.3"
+ - "react-router-dom": "^5.1.2"
+ - "redux": "^4.0.5"
+ - "redux-logger": "^3.0.6"
+ - "redux-thunk": "^2.3.0"
+ - "webpack": "^4.41.5"
+ - "webpack-cli": "^3.3.10"
+
+Engines:
+  - "node": "13.0.1",
+  - "npm": "6.12.0"
+
 
 
 
