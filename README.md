@@ -1,6 +1,6 @@
 
-# [Disneyus](disneyus.herokuapp.com)
-**Disneyus** is a clone of [Genius](www.genius.com) with a disney twist. utilizing the same functionalities of Genius.
+# [Disneyus](https://disneyus.herokuapp.com/#/)
+**Disneyus** is a clone of [Genius](https://genius.com/) with a disney twist. utilizing the same functionalities of Genius.
 ![alt-text](https://github.com/mmmymustafa/fullstack/blob/master/readme_gifs/ezgif-6-09b06c6dd3cc.gif)
 
 # Getting Started
