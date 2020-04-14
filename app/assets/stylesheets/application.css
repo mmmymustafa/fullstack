@@ -1445,18 +1445,24 @@ border: solid;
 }
 
 .fb-img{
-    width: 50px;
-    height: 50px;
+    width: 61px;
+    height: 61px;
+    filter: invert(1);
+}
+
+.linkedin-link{
+    margin-top: -0.3rem;
 }
 
 .lin-img{
-    width: 50px;
-    height: 50px;
+    width: 63px;
+    height: 63px;
 }
 
 .git-img{
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
+    filter: invert(1);
 }
 
 .footer-links-container{
@@ -1474,15 +1480,17 @@ border: solid;
 }
 
 .github-link{
-    margin-left: 2rem;
+    margin-left: 1rem;
+    margin-top: -0.3rem;
 }
 
 .angelist-link{
-    margin-left: 2rem;
+    margin-left: 1.3rem;
 }
 
 .facebook-link{
     margin-left: 1.3rem;
+    margin-top: -0.3rem;
 }
 
 .artists-list-container{
@@ -1720,26 +1728,27 @@ border: solid;
 }
 
 .lin-img-sub{
-    width: 17.5px;
-    height: 17.5px;
+    width: 20px;
+    height: 20px;
 }
 
 .github-link-sub{
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-top: 0.1rem;
 }
 .git-img-sub{
-    width: 17.5px;
-    height: 17.5px;
+    width: 22px;
+    height: 22px;
+    filter: invert(100%);
 }
 
 .angelist-link-sub{
-    margin-left: 1rem;
+    margin-left: 0.55rem;
     margin-top: 0.1rem;
 }
 
 .angel-img-sub{
-    width: 12px;
+    width: 12.5px;
 }
 
 .facebook-link-sub{
@@ -1748,8 +1757,9 @@ border: solid;
 }
 
 .fb-img-sub{
-    width: 17.5px;
-    height: 17.5px;
+    width: 22px;
+    height: 22px;
+    filter: invert(1);
 }
 
 .search-dropdown-img{
