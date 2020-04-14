@@ -31,7 +31,7 @@ class SubHeader extends React.Component {
                 <div onClick={() => this.anchorHandler(document.getElementById('videos') ?  window.scrollY + document.querySelector('#videos').getBoundingClientRect().top : 2040)} className="sub-path">VIDEOS</div>
                 <div className="sub-path social-links">
                     <a className="linkedin-link-sub" href="https://www.linkedin.com/in/mohammed-mustafa-96469a167/" target="_blank">
-                        <div href className="linkedin-img-container"><img className="lin-img lin-img-sub" src="https://github.com/mmmymustafa/fullstack/blob/master/links_pics/linkedin-xxl.png" /></div>
+                        <div href className="linkedin-img-container"><img className="lin-img lin-img-sub" src="https://www.iconsdb.com/icons/preview/white/linkedin-xxl.png" /></div>
                     </a>
                     <a className="github-link-sub" href="https://github.com/mmmymustafa" target="_blank">
                         <div className="github-img-container"><img className="git-img git-img-sub" src="https://www.iconsdb.com/icons/preview/white/github-9-xxl.png" /></div>
