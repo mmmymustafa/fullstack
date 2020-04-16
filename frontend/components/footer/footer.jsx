@@ -23,7 +23,7 @@ class Footer extends React.Component {
                 </div>
                 <div className="footer-links-container">
                     <a href="https://www.linkedin.com/in/mohammed-mustafa-96469a167/" target="_blank">
-                        <div href className="linkedin-link"><img className="lin-img" src="https://lh3.googleusercontent.com/proxy/no1lQ2bty5SoUsABQ5zSHcFCmU9m85L58ywm3ImxV_F9kh2KEHMvS9ohbPxWO9O4dI_D4jTOJZSfXzhkwHFYFzo7EOB3K1vMXD0g8eFkrJVR_6WP3WOMgCM"/></div>
+                        <div href className="linkedin-link"><img className="lin-img" src="http://www.pngall.com/wp-content/uploads/2016/07/Linkedin-PNG.png"/></div>
                     </a>
                     <a href="https://github.com/mmmymustafa" target="_blank">
                         <div className="github-link"><img className="git-img" src="http://www.pngall.com/wp-content/uploads/2016/04/Github-Free-PNG-Image.png"/></div>
