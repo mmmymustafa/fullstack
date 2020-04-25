@@ -15,7 +15,7 @@ Upvote.destroy_all
 
 artist1 = Artist.create(name:'Elsa', about: 'She\'s basically a blonde Sub-Zero from Mortal Kombat', picture_url: 'http://babychattel.com/wp-content/uploads/2013/12/princess-elsa-frozen-disney-movie-idina-menzel-300x300.jpg', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
 album1 = Album.create(title: 'Frozen Soundtrack', release_date: 'November 25, 2013', artist_id: artist1.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/8/89/Frozen_2013_soundtrack.png', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
-track1 = Track.create(title: 'Let It Go', artist_id: artist1.id, album_id: album1.id, about: 'From the movie Frozen', lyrics: 
+track1 = Track.create(title: 'Let It Go', artist_id: artist1.id, album_id: album1.id, about: 'From the movie Frozen', track_link: "https://embed.music.apple.com/us/album/let-it-go/1440626755?i=1440626764&mt=1&app=music", lyrics: 
 'The snow glows white on the mountain tonight
 Not a footprint to be seen
 A kingdom of isolation
@@ -78,7 +78,7 @@ Here I stand in the light of day
 Let the storm rage on')
 
 album5 = Album.create(title: 'Frozen II Soundtrack', release_date: 'November 15, 2019', artist_id: artist1.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/a/af/Frozen_2_soundtrack.png', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
-track5 = Track.create(title: 'Into The Unknown', artist_id: artist1.id, album_id: album5.id, about: 'From the movie Frozen II', lyrics: 
+track5 = Track.create(title: 'Into The Unknown', artist_id: artist1.id, album_id: album5.id, about: 'From the movie Frozen II', track_link: "https://embed.music.apple.com/us/album/into-the-unknown/1487738280?i=1487738283&mt=1&app=music", lyrics: 
 'I can hear you but I won\'t
 Some look for trouble while others don\'t
 There\'s a thousand reasons I should go about my day
@@ -128,7 +128,7 @@ Where are you going? Don\'t leave me alone
 How do I follow you
 Into the unknown?')
 
-track6 = Track.create(title: 'Show Yourself', artist_id: artist1.id, album_id: album5.id, about: 'From the movie Frozen II', lyrics:
+track6 = Track.create(title: 'Show Yourself', artist_id: artist1.id, album_id: album5.id, about: 'From the movie Frozen II', track_link: "https://embed.music.apple.com/us/album/show-yourself/1487738280?i=1487738499&mt=1&app=music", lyrics:
 'Every inch of me is trembling
 But not from the cold
 Something is familiar
@@ -219,7 +219,7 @@ Ah ah ah')
 
 artist2 = Artist.create(name:'Timon & Pumbaa', about: 'Don\'t try to come up with a better duo because you can\'t', picture_url: 'https://resizing.flixster.com/2fODhxpP6Mr8W-cB6GR-BQPAERg=/300x300/v1.bjszODQxOTY7ajsxODMxOTsxMjAwOzIwNDg7MTE1Mg', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
 album2 = Album.create(title: 'Lion King Soundtrack', release_date: 'June 24, 1994', artist_id: artist2.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/0/0e/The_Lion_King_%28soundtrack%29.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
-track2 = Track.create(title: 'Hakuna Matata', artist_id: artist2.id, album_id: album2.id, about: 'From the movie Lion King', lyrics: 
+track2 = Track.create(title: 'Hakuna Matata', artist_id: artist2.id, album_id: album2.id, about: 'From the movie Lion King', track_link: "https://embed.music.apple.com/us/album/hakuna-matata/1445732923?i=1445732931&mt=1&app=music", lyrics: 
 'Hakuna Matata!
 What a wonderful phrase
 Hakuna Matata!
@@ -270,7 +270,7 @@ Hakuna Matata')
 
 artist3 = Artist.create(name:'Aladdin', about: 'Straight up pimpin with his flyin carpet boiiii', picture_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv8FCbhgPJzOPaGLQ60RZUMVpn0n0sXHIAW0qxR_Vl8hsWAFy9Kg&s', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
 album3 = Album.create(title: 'Aladdin Soundtrack', release_date: 'November 25, 1992', artist_id: artist3.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/4/4a/Disney%27s_Aladdin_soundtrack_cover.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
-track3 = Track.create(title: 'A New World', artist_id: artist3.id, album_id: album3.id, about: 'From the movie Lion King', lyrics: 
+track3 = Track.create(title: 'A Whole New World', artist_id: artist3.id, album_id: album3.id, about: 'From the movie Lion King', track_link: "https://embed.music.apple.com/us/album/a-whole-new-world-soundtrack-version/1440722016?i=1440722284&mt=1&app=music", lyrics: 
 'I can show you the world
 Shining, shimmering, splendid
 Tell me, princess, now when did
@@ -323,7 +323,7 @@ For you and me')
 
 artist4 = Artist.create(name:'Hannah Montana', about: 'idk she kinda reminds me of Miley Cyrus', picture_url: 'http://images4.fanpop.com/image/photos/15800000/Hannah-Montana-rocket-girl-15849131-300-300.jpg', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
 album4 = Album.create(title: 'Hannah Montana 2: Meet Miley Cyrus', release_date: 'June 26, 2007', artist_id: artist4.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/3/35/Hannah_Montana_2.png', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
-track4 = Track.create(title: 'No Body\'s Perfect', artist_id: artist4.id, album_id: album4.id, about: 'From the movie Lion King', lyrics: 
+track4 = Track.create(title: 'Nobody\'s Perfect', artist_id: artist4.id, album_id: album4.id, about: 'From the movie Lion King', track_link: "https://embed.music.apple.com/us/album/nobodys-perfect/1452858684?i=1452858869&mt=1&app=music", lyrics: 
 'Everybody makes mistakes
 Everybody has those days
 One, two, three, four!
@@ -425,7 +425,7 @@ No, no, nobody\'s perfect!')
 
 artist5 = Artist.create(name:'Repunzel', about: 'Blonde hair, tall hair, don\'t care', picture_url: 'https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-1/34535824_1214474352028186_4458218865482006528_n.jpg?_nc_cat=107&_nc_sid=dbb9e7&_nc_ohc=nvctcFv24IAAX-IZ1Of&_nc_ht=scontent-sjc3-1.xx&oh=5029e7f3bc386ea1e3fd34c2137883db&oe=5EA18714', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
 album6 = Album.create(title: 'Tangled Soundtrack', release_date: 'November 16, 2010', artist_id: artist5.id , about:'the album title says it all', album_cover_url: 'https://img.discogs.com/fQr6TzCiIWoipqAAIQcXgq_VXLM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3526286-1357874140-6575.jpeg.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
-track7 = Track.create(title: 'When Will My Life Begin', artist_id: artist5.id, album_id: album6.id, about: 'From the movie Tangled', lyrics:
+track7 = Track.create(title: 'When Will My Life Begin', artist_id: artist5.id, album_id: album6.id, about: 'From the movie Tangled', track_link: "https://embed.music.apple.com/us/album/when-will-my-life-begin/1440639057?i=1440639066&mt=1&app=music", lyrics:
 'Seven a.m., the usual morning lineup
 Start on the chores and sweep \'till the floor\'s all clean
 Polish and wax, do laundry, and mop and shine up
@@ -465,7 +465,7 @@ Now that I\'m older
 Mother might just
 Let me go')
 
-track8 = Track.create(title: 'I See The Light', artist_id: artist5.id, album_id: album6.id, about: 'From the movie Tangled', lyrics:
+track8 = Track.create(title: 'I See The Light', artist_id: artist5.id, album_id: album6.id, about: 'From the movie Tangled', track_link: "https://embed.music.apple.com/us/album/i-see-the-light/1440639057?i=1440639422&mt=1&app=music", lyrics:
 'All those days watching from the windows
 All those years outside looking in
 All that time never even knowing
@@ -508,7 +508,7 @@ Now that I see you
 
 Now that I see you')
 
-track9 = Track.create(title: 'Healing Incantation', artist_id: artist5.id, album_id: album6.id, about: 'From the movie Tangled', lyrics:
+track9 = Track.create(title: 'Healing Incantation', artist_id: artist5.id, album_id: album6.id, about: 'From the movie Tangled', track_link: "https://embed.music.apple.com/us/album/healing-incantation/1440639057?i=1440639430&mt=1&app=music", lyrics:
 'Flower, gleam and glow
 Let your power shine
 Make the clock reverse
@@ -523,7 +523,7 @@ What once was mine')
 
 artist6 = Artist.create(name:'Troy & Gabriella', about: 'Not a better duo than Timon & Pumbaa', picture_url: 'https://lastfm.freetls.fastly.net/i/u/300x300/61093c3dc0a43c1ba69246a8d72232dd.jpg', header_pic_url:'https://img.cinemablend.com/filter:scale/cb/a/2/4/e/2/f/a24e2f4993d189113b4124daa0142d1f77e8787ce304a265793cca30ed6384d9.jpg?mw=600')
 album7 = Album.create(title: 'High School Musical', release_date: 'January 10, 2006', artist_id: artist6.id , about:'the album title says it all', album_cover_url: 'https://upload.wikimedia.org/wikipedia/en/d/df/HighschoolmusicalCD.jpg', track_banner: 'https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/11/elsa_and_anna_in_frozen_2_ending_0.jpg?itok=2IR6FDMs' )
-track10 = Track.create(title: 'Start of Something New', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical', lyrics:
+track10 = Track.create(title: 'Start of Something New', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical', track_link: "https://embed.music.apple.com/us/album/start-of-something-new/1440746457?i=1440746460&mt=1&app=music", lyrics:
 'Livin\' in my own world
 Didn\'t understand
 That anything could happen
@@ -588,7 +588,7 @@ The start of something new
 The start of something new
 The start of something new')
 
-track11 = Track.create(title: 'Get\'cha Head In The Game', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical (Only Troy Performes in this track)', lyrics:
+track11 = Track.create(title: 'Get\'cha Head In The Game', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical (Only Troy Performes in this track)', track_link: "https://embed.music.apple.com/us/album/getcha-head-in-the-game/1440746457?i=1440746953&mt=1&app=music", lyrics:
 'Coach said to fake right and break left
 Watch out for the pick and keep an eye on defense
 Gotta run the give and go and take the ball to the hole
@@ -681,7 +681,7 @@ You gotta get\'cha, get\'cha, get\'cha
 Get\'cha head in the game
 Whoa!')
 
-track12 = Track.create(title: 'What I\'ve Been Looking For', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical', lyrics:
+track12 = Track.create(title: 'What I\'ve Been Looking For', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical', track_link: "https://embed.music.apple.com/us/album/what-ive-been-looking-for-reprise/1440746457?i=1440746975&mt=1&app=music", lyrics:
 'It\'s hard to believe
 That I couldn\'t see
 You were always there beside me
@@ -700,7 +700,7 @@ No one like you
 So lonely before I finally found
 What I\'ve been looking for')
 
-track13 = Track.create(title: 'When There Was Me and You', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical (Only Gabriella performs in this track)', lyrics:
+track13 = Track.create(title: 'When There Was Me and You', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical (Only Gabriella performs in this track)', track_link: "https://embed.music.apple.com/us/album/when-there-was-me-and-you/1440746457?i=1440747173&mt=1&app=music", lyrics:
 'It\'s funny when you find yourself
 Looking from the outside
 I\'m standing here but all I want
@@ -748,7 +748,7 @@ And I didn\'t mind
 I thought you felt it too
 When there was me and you')
 
-track14 = Track.create(title: 'Breaking Free', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical', lyrics:
+track14 = Track.create(title: 'Breaking Free', artist_id: artist6.id, album_id: album7.id, about: 'From the movie High School Musical', track_link: "https://embed.music.apple.com/us/album/breaking-free/1440746457?i=1440747342&mt=1&app=music", lyrics:
 'We\'re soarin\', flyin\'
 There\'s not a star in heaven
 That we can\'t reach
