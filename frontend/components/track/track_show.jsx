@@ -8,10 +8,19 @@ import ArtistTooltip from '../artist/artist_tooltip'
 class TrackShow extends React.Component{
     constructor(props){
         super(props)
+        // let heightDelta;
+        // if (document.querySelector('.footer').getBoundingClientRect() && document.querySelector('#player-container').getBoundingClientRect()){
+        //     heightDelta = window.scrollY + document.querySelector('.footer').getBoundingClientRect().top - window.scrollY + document.querySelector('#player-container').getBoundingClientRect().top
+        // } 
         this.state = {
-            showTooltip: false
+            showTooltip: false,
+            player : false,
+            // scrollStop: heightDelta >= 195.1875 ? true : false
         }
         this.toggleShowTooltip = this.toggleShowTooltip.bind(this)
+        this.showPlayer = this.showPlayer.bind(this)
+        this.hidePlayer = this.hidePlayer.bind(this)
+        this.samplePlayerScroll = this.samplePlayerScroll.bind(this)
     }
 
     componentDidMount() {
@@ -31,10 +40,28 @@ class TrackShow extends React.Component{
         }
     }
 
+    samplePlayerScroll(){
+        $(window).scroll(function () {
+            $("#player-container").css("top", Math.min(450, (window.scrollY + document.querySelector('.footer').getBoundingClientRect().top - 195.1875) - $(this).scrollTop()));
+        });
+    }
+
+    showPlayer(){
+        this.setState({player: true})
+    }
+
+    hidePlayer(){
+        this.setState({player: false})
+    }
+
     render() {
+        this.samplePlayerScroll()
         this.toggleShowTooltip()
         return (
           <div className="track-page">
+                <div className="track-sample-player-containter" id="player-container">
+                    {!this.state.player ? <div className="toggle-player-button-container"><div onClick={this.showPlayer} className="toggle-player-button">SHOW MUSIC PLAYER</div> </div> : <div className="iframe-container"><div className="hide-player-button-container"><div onClick={this.hidePlayer} className="hide-player-button">x</div></div><iframe allow="autoplay *; encrypted-media *;" className="track-sample-player" frameborder="0" height="150" style={{ width: "88%", overflow: "hidden", background: "transparent", border: "solid" }} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/let-it-go/1440626755?i=1440626764&app=music"></iframe></div>}
+            </div>
             <div className="track-header">
                     <img className={`track-album-cover ${this.props.track.id}`} src={this.props.album.album_cover_url}/>
                 {/* Using Frozen Soundtrack picture only for testing purposes */}
