@@ -2065,6 +2065,7 @@ button.song__share{
 .toggle-player-button-container{
     width: 100%;
     text-align: -webkit-center;
+    position: fixed;
 }
 
 .toggle-player-button{
@@ -2074,7 +2075,6 @@ button.song__share{
     padding: 1rem;
     color: white;
     border-radius: 2rem;
-    margin-top: 7rem;
     cursor: pointer;
     transition: 0.2s display;
 }
@@ -2095,4 +2095,9 @@ button.song__share{
 .hide-player-button-container{
     text-align: -webkit-right;
     width: 94.2%;
+}
+
+.iframe-container{
+    position: fixed;
+    width: 100%;
 }

@@ -21,6 +21,7 @@ class TrackShow extends React.Component{
         this.showPlayer = this.showPlayer.bind(this)
         this.hidePlayer = this.hidePlayer.bind(this)
         this.samplePlayerScroll = this.samplePlayerScroll.bind(this)
+        this.showPlayerScroll = this.showPlayerScroll.bind(this)
     }
 
     componentDidMount() {
@@ -46,6 +47,12 @@ class TrackShow extends React.Component{
         });
     }
 
+    showPlayerScroll(){
+        $(window).scroll(function () {
+            $("#player-button-container").css("top", Math.min(580, (window.scrollY + document.querySelector('.footer').getBoundingClientRect().top - 65.1875) - $(this).scrollTop()));
+        });
+    }
+
     showPlayer(){
         this.setState({player: true})
     }
@@ -55,12 +62,13 @@ class TrackShow extends React.Component{
     }
 
     render() {
+        this.showPlayerScroll()
         this.samplePlayerScroll()
         this.toggleShowTooltip()
         return (
           <div className="track-page">
-                <div className="track-sample-player-containter" id="player-container">
-                    {!this.state.player ? <div className="toggle-player-button-container"><div onClick={this.showPlayer} className="toggle-player-button">SHOW MUSIC PLAYER</div> </div> : <div className="iframe-container"><div className="hide-player-button-container"><div onClick={this.hidePlayer} className="hide-player-button">x</div></div><iframe allow="autoplay *; encrypted-media *;" className="track-sample-player" frameborder="0" height="150" style={{ width: "88%", overflow: "hidden", background: "transparent", border: "solid" }} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src={this.props.track.track_link}></iframe></div>}
+                <div className="track-sample-player-containter">
+                    {!this.state.player ? <div className="toggle-player-button-container" id="player-button-container"><div onClick={this.showPlayer} className="toggle-player-button">SHOW MUSIC PLAYER</div> </div> : <div className="iframe-container" id="player-container"><div className="hide-player-button-container"><div onClick={this.hidePlayer} className="hide-player-button">x</div></div><iframe allow="autoplay *; encrypted-media *;" className="track-sample-player" frameborder="0" height="150" style={{ width: "88%", overflow: "hidden", background: "transparent", border: "solid" }} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src={this.props.track.track_link}></iframe></div>}
             </div>
             <div className="track-header">
                     <img className={`track-album-cover ${this.props.track.id}`} src={this.props.album.album_cover_url}/>
